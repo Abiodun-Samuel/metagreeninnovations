@@ -92,10 +92,9 @@
     {{-- Fixed buttons --}}
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
+
     {{-- loader --}}
-    <div id="loader">
-        <img src="{{ url('images/logo.jpg') }}" alt="Company logo">
-    </div>
+    <div id="loader"></div>
 
 
     {{-- ========== JS Libraries ========== --}}

@@ -33,6 +33,7 @@ body {
 }
 
 /* Fixed Buttons (Loader) */
+/* Loader */
 #loader {
   position: fixed;
   top: 0;
@@ -45,15 +46,15 @@ body {
 }
 
 #loader:before {
-  content: "";
+ content: "";
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #f2f2f2;
-  border-top: 6px solid #2eca6a;
+  border-top: 6px solid var(--green-2);
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 7rem;
+  height: 7rem;
   -webkit-animation: animate-preloader 1s linear infinite;
   animation: animate-preloader 1s linear infinite;
 }
@@ -75,6 +76,30 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* Back to the top button */
+.back-to-top {
+  position: fixed;
+  display: none;
+  background: #2eca6a;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 1;
+  font-size: 16px;
+  border-radius: 50%;
+  right: 15px;
+  bottom: 15px;
+  transition: background 0.5s;
+  z-index: 11;
+}
+
+.back-to-top i {
+  padding-top: 12px;
+  color: #fff;
+}
+
 /* ========== General Style Ends========== */
 
 /* ========== Custom Variables ========== */
