@@ -14,6 +14,11 @@ class PagesController extends Controller
       $metatitle = "About Us | Welcome to Metagreen Innovations";
       return view('about', compact('metatitle'));
    }
+   public function contact(){
+      $metatitle = "Contact Us | Welcome to Metagreen Innovations";
+      $innertitle = "Contact Us";
+      return view('contact', compact('metatitle', 'innertitle'));
+   }
    public function project(){
       $metatitle = "Our Project | Welcome to Metagreen Innovations";
       return view('project', compact('metatitle'));
