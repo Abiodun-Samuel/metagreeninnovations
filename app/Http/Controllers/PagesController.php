@@ -11,16 +11,23 @@ class PagesController extends Controller
       return view('index', compact('metatitle'));
    }
    public function about(){
-      $metatitle = "About Us | Welcome to Metagreen Innovations";
-      return view('about', compact('metatitle'));
+      $metatitle = "About Us | Metagreen Innovations";
+      $innertitle = "About Us";
+      return view('about', compact('metatitle', 'innertitle'));
    }
    public function contact(){
-      $metatitle = "Contact Us | Welcome to Metagreen Innovations";
+      $metatitle = "Contact Us | Metagreen Innovations";
       $innertitle = "Contact Us";
       return view('contact', compact('metatitle', 'innertitle'));
    }
    public function project(){
-      $metatitle = "Our Project | Welcome to Metagreen Innovations";
-      return view('project', compact('metatitle'));
+      $metatitle = "Our Project | Metagreen Innovations";
+      $innertitle = "Projects";
+      return view('project', compact('metatitle', 'innertitle'));
+   }
+   public function service(){
+      $innertitle = "Services";
+      $metatitle = "Our Services | Welcome to Metagreen Innovations";
+      return view('service', compact('metatitle', 'innertitle'));
    }
 }

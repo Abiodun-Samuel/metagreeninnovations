@@ -3,8 +3,8 @@
 
 @section('content')
 
-    <section id="contact" class="contact"> 
-    
+    <section id="contact" class="contact">
+
         <div class="container">
 
             <div class="section-title" data-aos="fade-up">
@@ -85,4 +85,8 @@
         </div>
     </section>
 
+@endsection
+
+@section('test')
+    <H2>testing testing </H2>
 @endsection

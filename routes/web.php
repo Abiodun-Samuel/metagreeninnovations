@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,12 @@ use App\Http\Controllers\PagesController;
 |
 */
 
+// Webpages
 Route::get('/', [PagesController::class, 'index']);
 Route::get('/contact', [PagesController::class, 'contact']);
+Route::get('/about', [PagesController::class, 'about']);
 Route::get('/project', [PagesController::class, 'project']);
+Route::get('/service', [PagesController::class, 'service']);
+
+// Forms
+Route::get('/forms/{form_page}', [FormController::class, 'forms']);
