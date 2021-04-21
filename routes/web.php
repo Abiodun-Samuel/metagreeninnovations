@@ -1,26 +1,21 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
 use App\Http\Controllers\FormController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\PagesController;
+use Illuminate\Support\Facades\Route;
 
 // Webpages
 Route::get('/', [PagesController::class, 'index']);
-Route::get('/contact', [PagesController::class, 'contact']);
-Route::get('/about', [PagesController::class, 'about']);
-Route::get('/project', [PagesController::class, 'project']);
-Route::get('/service', [PagesController::class, 'service']);
+Route::get('/About Us', [PagesController::class, 'about']);
+Route::get('/Project', [PagesController::class, 'project']);
+Route::get('/projects/{project_page}', [PagesController::class, 'projectpage'])->where('project_page', 'Oral Estate Project|Buena Vista Estate Project 1|Buena Vista Estate Project 2|County Homes Project|Hilltop Estate Project|Olomore Housing Estate Project');
+Route::get('/Service', [PagesController::class, 'service']);
 
-// Forms
-Route::get('/forms/{form_page}', [FormController::class, 'forms']);
+// Contact and Send mail
+Route::get('/Contact Us', [FormController::class, 'contact']);
+Route::post('/contact/sendmail', [FormController::class, 'sendmail'])->name('sendmail');
+
+// Fallback route
+Route::fallback(function () {
+    return view('errors.404');
+});
