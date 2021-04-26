@@ -15,14 +15,14 @@
     <link rel="manifest" href="{{ url('/images/site.webmanifest') }}">
 
     {{-- ========== Google Fonts ========== --}}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
+
     {{-- ========== CSS Libraries ========== --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 
     {{-- ========== Custom CSS  ========== --}}
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
@@ -30,18 +30,14 @@
 </head>
 
 <body>
-
     {{-- ========== Header Section ========== --}}
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top">
-
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-
                 {{-- Company Logo --}}
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="img-fluid" src="{{ url('images/logo.jpg') }}" alt="Metagreeen Innovations Logo">
                 </a>
-
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -54,19 +50,17 @@
                         </svg>
                     </span>
                 </button>
-
                 {{-- Nav Links --}}
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ml-auto">
                         <a class="nav-link active" href="{{ url('/') }}"> HOME </a>
                         <a class="nav-link" href="{{ url('/About Us') }}"> ABOUT </a>
-                        <a class="nav-link" href="{{ url('/Service') }}"> SERVICES </a>
-                        <a class="nav-link" href="{{ url('/Project') }}"> PROJECTS </a>
+                        <a class="nav-link" href="{{ url('/Services') }}"> SERVICES </a>
+                        <a class="nav-link" href="{{ url('/Projects') }}"> PROJECTS </a>
                         <a class="nav-link" href="{{ url('/Contact Us') }}"> CONTACT </a>
                     </div>
                 </div>
             </div>
-
         </nav>
     </header>
     {{-- ========== Header Section Ends ========== --}}
@@ -77,21 +71,30 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-
                     {{-- About Ceo --}}
-                    <div class="col-lg-4 col-md-6 footer-info">
-                        <h3> Metagreen Innovations </h3>
+                    <div class="col-lg-4 col-md-6 newsletter">
+                        <h4>Newsletter</h4>
 
-                        <img class="img-thumbnail my-2" src="{{ url('images/ceo.jpg') }}"
-                            alt="ceo of metagreen innovations">
+                        <p> Join the list of VIP members to recieve weekly updates, news and special deals directly into
+                            your inbox. </p>
 
-                        <p>
-                            <strong> Olorunnibi Ezekiel Dunsin</strong> is an entrepreneur by passion. By training, he
-                            is an Electrical & Electronics Engineer. Being the CEO of Metagreen Innovations, he has
-                            executed many
-                            medium and large scale inverter and solar system installations in Nigeria since 2017.
-                        </p>
+                        <form action="{{ route('subscribe') }}" method="post" autocomplete="on"
+                            enctype="application/x-www-form-urlencoded">
+                            @csrf
 
+                            @error('email')
+                                <div class="alert alert-danger">
+                                    <p>{{ $message }}</p>
+                                </div>
+                            @enderror
+
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control my-2" name="email" id="email"
+                                    value="{{ old('email') }}">
+                                <input class="my-2" type="submit" value="Subscribe">
+                            </div>
+                        </form>
                     </div>
 
                     <div class="col-lg-4 col-md-6 footer-links">
@@ -99,8 +102,8 @@
                         <ul>
                             <li><a href="{{ url('/') }}">Home</a></li>
                             <li><a href=" {{ url('/About Us') }}">About Us</a></li>
-                            <li><a href="{{ url('/Service') }}">Services</a></li>
-                            <li><a href="{{ url('/Project') }}">Projects</a></li>
+                            <li><a href="{{ url('/Services') }}">Services</a></li>
+                            <li><a href="{{ url('/Projects') }}">Projects</a></li>
                             <li><a href="{{ url('/Contact Us') }}">Contact Us</a></li>
                         </ul>
                     </div>
@@ -181,6 +184,7 @@
         </div>
     </footer>
 
+    {{-- @include('cookie-consent::index') --}}
     {{-- Fixed buttons --}}
     <a href="" class="back-to-top">
         <i>
@@ -193,18 +197,31 @@
         </i>
     </a>
 
-
     {{-- ========== JS Libraries ========== --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js">
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/CSSRulePlugin.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"
+        integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    {{-- {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script> --}}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     {{-- ========== Custom JS ========== --}}
     <script src="{{ url('js/script.js') }}"></script>

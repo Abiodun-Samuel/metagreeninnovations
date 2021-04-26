@@ -18,14 +18,14 @@ class PagesController extends Controller
 
     public function project()
     {
-        $metatitle = "Our Project | Metagreen Innovations";
-        $innertitle = "Project";
-        return view('Project', compact('metatitle', 'innertitle'));
+        $metatitle = "Our Projects | Metagreen Innovations";
+        $innertitle = "Projects";
+        return view('Projects', compact('metatitle', 'innertitle'));
     }
 
     public function projectpage($project_page)
     {
-        $metatitle = "Project | Metagreen Innovations";
+        $metatitle = "Projects | Metagreen Innovations";
         $innertitle = $project_page;
         return view('projects/' . $project_page, compact('metatitle', 'innertitle'));
     }
@@ -34,6 +34,6 @@ class PagesController extends Controller
     {
         $innertitle = "Services";
         $metatitle = "Our Services | Welcome to Metagreen Innovations";
-        return view('Service', compact('metatitle', 'innertitle'));
+        return view('Services', compact('metatitle', 'innertitle'));
     }
 }

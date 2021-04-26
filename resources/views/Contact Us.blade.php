@@ -3,7 +3,7 @@
 @section('content')
 
     <x-header pageheader="{{ $innertitle }}" subpageheader="" pagedescription="We'd love to hear about your project and help you get started, Let's talk about how we can help you
-                        achieve your goals." />
+                                                                                            achieve your goals." />
 
     <div class="contact">
         <div class="container">
@@ -11,11 +11,29 @@
 
                 <div class="col-lg-7 my-3 d-flex align-items-stretch">
 
-                    <form action="{{ route('sendmail') }}" method="POST" role="form" class="contact-form">
+                    <form action="{{ route('sendmail') }}" method="POST" role="form" class="contact-form"
+                        autocomplete="on" enctype="application/x-www-form-urlencoded">
                         @csrf
 
-                        <em>* fields are required</em>
+                        @if (Session::has('error'))
+                            <div class="alert alert-danger">
+                                <p> {{ Session::get('error') }} </p>
+                            </div>
+                        @endif
 
+                        @if ($errors->all())
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <p>{{ $error }}</p>
+                                        </li>
+                                    </ul>
+                                @endforeach
+                            </div>
+                        @endif
+
+                        <em>* fields are required</em>
                         {{-- Name and Email --}}
                         <div class="form-row">
 
@@ -23,24 +41,12 @@
                                 <label for="name">Name * </label>
                                 <input type="text" name="name" class="form-control" value="{{ old('name') }}" id="name"
                                     min="3" required />
-
-                                @error('name')
-                                    <div class="alert alert-danger">
-                                        <p>{{ $message }}</p>
-                                    </div>
-                                @enderror
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="name">Email * </label>
                                 <input type="email" class="form-control" value="{{ old('email') }}" name="email"
                                     id="email" required />
-
-                                @error('email')
-                                    <div class="alert alert-danger">
-                                        <p>{{ $message }}</p>
-                                    </div>
-                                @enderror
                             </div>
                         </div>
 
@@ -51,38 +57,24 @@
                                 <label for="name">Subject</label>
                                 <input type="text" class="form-control" value="{{ old('subject') }}" name="subject"
                                     id="subject" min="2" />
-
-                                @error('subject')
-                                    <div class=" alert alert-danger">
-                                        <p>{{ $message }}</p>
-                                    </div>
-                                @enderror
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="phone">Your Phone *</label>
                                 <input type="tel" class="form-control" value="{{ old('phone') }}" name="phone" id="phone"
                                     required />
-
-                                @error('phone')
-                                    <div class="alert alert-danger">
-                                        <p>{{ $message }}</p>
-                                    </div>
-                                @enderror
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="name">How can we help? *</label>
+                            <label for="name">How can we help you? *</label>
                             <textarea class="form-control" value="{{ old('message') }}" name="message" rows="5"
                                 required></textarea>
+                        </div>
 
-                            @error('message')
-                                <div class="alert alert-danger">
-                                    <p>{{ $message }}</p>
-                                </div>
-                            @enderror
-
+                        <div class="form-group col-lg-12 my-3">
+                            <div class="g-recaptcha img-fluid" data-sitekey="{{ config('services.recaptcha.key') }}">
+                            </div>
                         </div>
 
                         <div class="text-center"><button type="submit">SEND MESSAGE</button></div>
@@ -92,7 +84,6 @@
                                 href="{{ url('https://policies.google.com/terms') }}">Terms of Service apply</a>.
                         </p>
                     </form>
-
                 </div>
 
                 <div class="col-lg-5 my-3 d-flex align-items-stretch">
@@ -144,8 +135,8 @@
                         </div>
 
                         <div style="width: 100%">
-                            <iframe width="100%" height="200" frameborder="0" scrolling="yes" marginheight="0"
-                                marginwidth="0"
+                            <iframe loading="lazy" width="100%" height="200" frameborder="0" scrolling="yes"
+                                marginheight="0" marginwidth="0"
                                 src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Goshen%20Estate,%20asero%20Abeokuta,%20Ogun%20State,%20Nigeria+(My%20Business%20Name)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
                             </iframe>
                         </div>

@@ -2,47 +2,78 @@
 
 @section('content')
 
-    <div class="projectdetails">
+    <x-header pageheader="Projects" subpageheader=" | {{ $innertitle }}" pagedescription="" />
 
-        @include('layouts.innerheader')
+    <div class="projectdetails my-5">
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-5 my-2">
+                <div class="col-lg-5 my-4">
                     <div class="projectdetails">
 
                         <h4>Project Details</h4>
 
                         <hr>
 
-                        <p> <b>Title:</b> <span>Design, Supply and Installation</span> </p>
-                        <p> <b>Location: </b> <span>Buena Vista Estate, Lekki, Lagos State Nigeria </span> </p>
-                        <p> <b>Date: </b> <span> December 2020.</span> </p>
+                        <p> <b>Title:</b> <span>Design, Supply and Installation.</span> </p>
+                        <p> <b>Location: </b> <span>Buena Vista Estate, Lekki, Lagos State Nigeria. </span> </p>
+                        <p> <b>Date: </b> <span> March 2021.</span> </p>
                         <p> <b>Components: </b>
                             <span>
                                 <ul class="ml-5">
                                     <li>2 Units of 10KVA Inverter (20KVA).</li>
                                     <li>24 Units of 200AH Tubular Batteries.</li>
                                     <li>50 Modules of 280Watts Solar Panels.</li>
-                                    <li>2 Units of 100Amps & 1 Unit of 60Amp MPPT Charge Controller.</li>
+                                    <li>2 Units of 120Amps MPPT Charge Controller.</li>
                                     <li>Other Complimentary Assessories.</li>
                                 </ul>
                             </span>
                         </p>
                     </div>
+
                 </div>
 
-                <div class="col-lg-8 col-md-7 my-2">
+                 <div class="col-lg-7 my-4">
                     <h4>Project Gallery</h4>
-                    <a class="venobox" data-gall="gallery01"
-                        href="{{ url('/images/projects/buena-vista-estate/image-bg.jpg') }}"><img class="img-fluid"
-                            src="{{ url('/images/projects/buena-vista-estate/image-sm.jpg') }}"></a>
-                    <a class="venobox" data-gall="gallery01"
-                        href="{{ url('/images/projects/buena-vista-estate/image-bg1.jpg') }}"><img
-                            src="{{ url('/images/projects/buena-vista-estate/image-sm1.jpg') }}"></a>
-                    <a class="venobox" data-gall="gallery01"
-                        href="{{ url('/images/projects/buena-vista-estate/image-bg1.jpg') }}"><img
-                            src="{{ url('/images/projects/buena-vista-estate/image-sm1.jpg') }}"></a>
+                    <div class="project-gallery">
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 2/image1.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 2/image1.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 2/image2.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 2/image2.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 2/image3.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 2/image3.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 2/image4.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 2/image4.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 2/image5.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 2/image5.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 2/image6.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 2/image6.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 2/image7.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 2/image7.jpg') }}">
+                        </a>
+                    </div>
+
+
                 </div>
             </div>
         </div>

@@ -2,21 +2,21 @@
 
 @section('content')
 
-    <div class="projectdetails">
-        
-        @include('layouts.innerheader')
+    <x-header pageheader="Projects" subpageheader=" | {{ $innertitle }}" pagedescription="" />
+
+    <div class="projectdetails my-5">
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-5 my-2">
+                <div class="col-lg-5 my-4">
                     <div class="projectdetails">
 
                         <h4>Project Details</h4>
 
                         <hr>
 
-                        <p> <b>Title:</b> <span>Design, Supply and Installation</span> </p>
-                        <p> <b>Location: </b> <span>Buena Vista Estate, Lekki, Lagos State Nigeria </span> </p>
+                        <p> <b>Title:</b> <span>Design, Supply and Installation.</span> </p>
+                        <p> <b>Location: </b> <span>Buena Vista Estate, Lekki, Lagos State Nigeria. </span> </p>
                         <p> <b>Date: </b> <span> December 2020.</span> </p>
                         <p> <b>Components: </b>
                             <span>
@@ -30,20 +30,52 @@
                             </span>
                         </p>
                     </div>
-
                 </div>
 
-                <div class="col-lg-8 col-md-7 my-2">
+                <div class="col-lg-7 my-4">
                     <h4>Project Gallery</h4>
-                    <a class="venobox" data-gall="gallery01"
-                        href="{{ url('/images/projects/buena-vista-estate/image-bg.jpg') }}"><img class="img-fluid"
-                            src="{{ url('/images/projects/buena-vista-estate/image-sm.jpg') }}"></a>
-                    <a class="venobox" data-gall="gallery01"
-                        href="{{ url('/images/projects/buena-vista-estate/image-bg1.jpg') }}"><img
-                            src="{{ url('/images/projects/buena-vista-estate/image-sm1.jpg') }}"></a>
-                    <a class="venobox" data-gall="gallery01"
-                        href="{{ url('/images/projects/buena-vista-estate/image-bg1.jpg') }}"><img
-                            src="{{ url('/images/projects/buena-vista-estate/image-sm1.jpg') }}"></a>
+                    <div class="project-gallery">
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 1/image1.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 1/image1.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 1/image2.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 1/image2.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 1/image3.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 1/image3.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 1/image4.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 1/image4.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 1/image5.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 1/image5.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 1/image8.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 1/image8.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 1/image6.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 1/image6.jpg') }}">
+                        </a>
+                        <a class="venobox" data-gall="gallery01"
+                            href="{{ url('/images/projects/Buena Vista Estate Project 1/image7.jpg') }}">
+                            <img class="img-fluid"
+                                src="{{ url('/images/projects/Buena Vista Estate Project 1/image7.jpg') }}">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

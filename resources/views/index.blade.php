@@ -6,40 +6,68 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 hero-text-box">
-                    <h1 class="hero-header my-4">
+                    <h1 class="hero-header">
                         <span>Safe</span>, <span>Steady</span> & <span>Sustainable</span> Energy Solutions for <br>
                         <span id="typed"></span>
                     </h1>
-                    <p class="hero-text my-4">
+                    <p class="hero-text anim">
                         We provide quality solar energy systems at affordable price. We take care
                         of the design, supply and installation. Do you wish to cut down the cost of your electricity bills?
                     </p>
-                    <div class="mt-5">
-                        <a href="{{ url('#start') }}" class="mybtn">Go Solar</a>
+                    <div class="hero-btn anim">
+                        <a href="{{ url('#start') }}" class="mybtn">Get Started</a>
                         <a href="{{ url('/Contact Us') }}" class="mybtn mx-5"> Contact</a>
                     </div>
                 </div>
 
                 <div class="col-lg-6 hero-img-box">
                     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                        <div class="carousel-inner">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner anim-img">
                             <div class="carousel-item active">
-                                <img title="Our Projects" src="{{ url('/images/test.jpg') }}" class="img-thumbnail"
-                                    alt="...">
+                                <img src="{{ url('/images/projects/Buena Vista Estate Project 1/image1.jpg') }}"
+                                    class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
+                                    width="500">
                             </div>
-                            <div title="Our Projects" class="carousel-item">
-                                <img src="{{ url('/images/test.jpg') }}" class="img-thumbnail" alt="...">
+                            <div class="carousel-item ">
+                                <img src="{{ url('/images/projects/Buena Vista Estate Project 1/image2.jpg') }}"
+                                    class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
+                                    width="500">
+                            </div>
+                            <div class="carousel-item ">
+                                <img loading="lazy"
+                                    src="{{ url('/images/projects/Buena Vista Estate Project 1/image3.jpg') }}"
+                                    class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
+                                    width="500">
+                            </div>
+                            <div class="carousel-item ">
+                                <img loading="lazy"
+                                    src="{{ url('/images/projects/Buena Vista Estate Project 1/image4.jpg') }}"
+                                    class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
+                                    width="500">
+                            </div>
+                            <div class="carousel-item ">
+                                <img loading="lazy"
+                                    src="{{ url('/images/projects/Buena Vista Estate Project 1/image4.jpg') }}"
+                                    class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
+                                    width="500">
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-    </div> {{-- ===== Hero Ends ===== --}}
+    </div>
+    {{-- ===== Hero Ends ===== --}}
 
     <!-- ====== About ====== -->
-    <section class="about">
+    <div class="about">
         <div class="container">
             <div class="row">
 
@@ -102,7 +130,8 @@
 
             </div>
         </div>
-    </section> <!-- ===== About Ends ====== -->
+    </div>
+    <!-- ===== About Ends ====== -->
 
     {{-- Why Solar --}}
     <section id="why-solar">
@@ -113,30 +142,34 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div data-aos="fade-up" class="why-text">
+                        <img src="{{ url('/images/services/start/solar-panel.svg') }}" alt="ABUNDANT ENERGY SOURCE">
+                        <h3>FREE & ABUNDANT ENERGY SOURCE</h3>
+                        <p> Solar energy serves as an important source of renewable
+                            energy.</p>
+
+                        <img src="{{ url('/images/services/start/energetic.svg') }}" alt="constant power">
                         <h3>
                             Reliable & Consistent Power Supply
                         </h3>
                         <p> Solar provides a consistent and regular means of power supply. </p>
-
-                        <h3>FREE & ABUNDANT ENERGY SOURCE</h3>
-                        <p> Solar energy serves as an important source of renewable
-                            energy.</p>
                     </div>
 
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="why-box" data-aos-delay="100">
+                    <div class="why-box" data-aos-delay="100" data-aos="fade-up">
 
-                        <img title="solar Panel" data-aos="zoom-in" class="img-thumbnail"
-                            src="{{ url('/images/solar.jpg') }}" alt="importance of solar">
+                        <img title="solar Panel" class="img-thumbnail " src="{{ url('/images/solar.jpg') }}"
+                            alt="importance of solar">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
 
                     <div data-aos="fade-up" data-aos-delay="200" class="why-text">
+                        <img src="{{ url('/images/services/start/tool-box.svg') }}" alt="maintainance free">
                         <h3>MAINTENANCE FREE</h3>
                         <p>By going in for solar power, you will cut your cost of
                             electricity at home or office</p>
+                        <img src="{{ url('/images/services/start/earth-globe.svg') }}" alt="eco friendly">
                         <h3>
                             ECO FRIENDLY
                         </h3>
@@ -148,14 +181,37 @@
 
             </div>
         </div>
-    </section> {{-- Why Solar End --}}
+    </section>
+    {{-- Why Solar End --}}
 
     <!-- ======= Services ======= -->
-    @include('layouts.servicelayout')
-    <!-- ========== Services Ends=========== -->
+    <section class="services">
+        <div class="container">
+            <div class="header">
+                <h2>Services</h2>
+                <p>We specialize in the provision of viable alternative Power backup and renewable energy solutions
+                    using innovative and industry best practice. We do this through the following services</p>
+            </div>
+            <div class="row">
+                <x-service aos="0" title="Supply of inverter and solar system components"
+                    description="We sell and supply inverters of different capacities, inverter batteries, solar panels and charge controllers are available at competitive prices." />
+                <x-service aos="50" title="Solar System design and installation"
+                    description="One of the factors that contribute to a failed solar system is poor design from the onset. We design using standard approach and carry out installations using industry best practice." />
+                <x-service aos="100" title="Inverter | ups System Sizing and Installation"
+                    description="Sizing an inverter is an important part of any installation, big or small. Batteries send DC electricity to your inverter, you need to have an inverter size that can handle the load and convert it to AC power. This requires knowing how to size an inverter properly. We can help you with this." />
 
-    @include('layouts.cta-layout')
+                <x-service aos="150" title="Solar street lighting projects design and execution"
+                    description="Get your street illuminated with solar lights at affordable cost. You will surely need our solutions." />
+                <x-service aos="200" title="Supply & installation of Solar Water Pumps & Heating Systems"
+                    description="Solar pumps and solar water heating systems are a great way to cut down electricity bills. Thinking of embracing the technology? Metagreen innovations comes handy here." />
+                <x-service aos="250" title="General consultancy"
+                    description="We are available to listen to you and advise you on issues that relate to your electricity needs. Our business acumen may just be what you need to bridge the gap in solving your energy problems." />
+            </div>
+        </div>
+        </div>
 
+    </section>
+    <!-- ===== Services Ends ====== -->
     <!-- ===== Projects  ====== -->
     <section class="projects">
         <div class="container">
@@ -168,21 +224,24 @@
 
             <div class="row">
                 <x-project aos="0" folder="Oral Estate Project" description="5KVA Complete Solar System at Oral Estate"
-                    image="qwert" />
+                    image="image2" />
                 <x-project aos="50" folder="Buena Vista Estate Project 1"
-                    description="20KVA Complete Solar System at Buena Vista Estate (Project 1)." image="img" />
-                <x-project aos="100" folder="County Homes Project" description="2KVA Complete System at Lekki County Homes."
-                    image="qwert" />
-
+                    description="20KVA Complete Solar System at Buena Vista Estate (Project 1)." image="image4" />
+                <x-project aos="100" folder="Lekki County Homes Project"
+                    description="2KVA Complete System at Lekki County Homes." image="image2" />
             </div>
 
             <div class="my-5">
-                <a href="{{ url('/Project') }}" class="mybtn yellow-1">View More</a>
+                <a href="{{ url('/Projects') }}" class="mybtn yellow-1">View More</a>
             </div>
 
         </div>
     </section>
     <!-- ===== Projects Ends ===== -->
+
+    <x-cta
+        cta="If you'd like to know more about our services or you have any inquiries, click the button to contact us. We'd love to hear from you!"
+        page="Contact Us" />
 
     {{-- Get Started --}}
     <section id="start">
@@ -197,7 +256,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch" data-aos="zoom-in">
+                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="startbox text-center p-5 my-2">
                         <h3>Contact</h3>
                         <img src="{{ url('/images/services/start/contact.svg') }}" alt="contact us now">
@@ -208,7 +267,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="50">
+                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="50">
                     <div class="startbox text-center p-5 my-2">
                         <h3>Power Assessment</h3>
                         <img src="{{ url('/images/services/start/assessment.svg') }}" alt="Power assessment">
@@ -227,7 +286,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="150">
+                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
                     <div class="startbox text-center p-5 my-2">
                         <h3>Installation </h3>
                         <img src="{{ url('/images/services/start/installation.svg') }}" alt="installation">
@@ -244,24 +303,96 @@
     </section>
     {{-- Get Started --}}
 
-    {{-- ========== Our clients ========== --}}
-    <section class="clients">
+    {{-- ==== Partners ===== --}}
+    <section>
         <div class="container">
             <div class="header">
                 <h2> Our Partners</h2>
             </div>
+            <div class="row">
+                {{-- Clients --}}
+                <div data-aos="fade-up">
+                    <div class="partners text-center">
+                        <img class="img-fluid figure  m-3" src="{{ url('images/clients/lento.jpg') }}" alt="Our Clients">
+                        <img class="img-fluid figure m-3" src="{{ url('images/clients/famicare.jpg') }}"
+                            alt="Our Clients">
+                        <img class="img-fluid figure m-3" src="{{ url('images/clients/felicity.jpg') }}"
+                            alt="Our Clients">
+                        <img class="img-fluid figure m-3" src="{{ url('images/clients/samba.jpg') }}" alt="Our Clients">
+                        <img class="img-fluid figure m-3" src="{{ url('images/clients/wandel.jpg') }}" alt="Our Clients">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- ==== Partners ===== --}}
 
-            <div class="row text-center">
-                <div class="col-lg-12 py-4">
-                    <img class="img-fluid figure m-3" src="{{ url('images/clients/lento.jpg') }}" alt="Our Clients">
-                    <img class="img-fluid figure m-3" src="{{ url('images/clients/famicare.jpg') }}" alt="Our Clients">
-                    <img class="img-fluid figure m-3" src="{{ url('images/clients/felicity.jpg') }}" alt="Our Clients">
-                    <img class="img-fluid figure m-3" src="{{ url('images/clients/samba.jpg') }}" alt="Our Clients">
-                    <img class="img-fluid figure m-3" src="{{ url('images/clients/wandel.jpg') }}" alt="Our Clients">
+    {{-- ==== Testimonials ===== --}}
+    <section class="testimonials">
+        <div class="container">
+            <div class="header">
+                <h2>Customer Testimonials</h2>
+                <p>Read what our valued customers have to say about us.</p>
+            </div>
+
+            <div class="row" data-aos="fade-up">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner text-center">
+                        <div class="carousel-item active">
+                            <img src="{{ url('/images/testimonials/image1.jpg') }}" class="img-thumbnail" alt="">
+                            <div class="text-center">
+                                <h5> Mr. Eneje Ikenna (Oral Estate, Lekki) </h5>
+                                <p>
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            aria-hidden="true" focusable="false" width="2.5em" height="2.5em"
+                                            viewBox="0 0 24 24">
+                                            <path d="M10 7l-2 4h3v6H5v-6l2-4h3m8 0l-2 4h3v6h-6v-6l2-4h3z" fill="#d58943" />
+                                        </svg>
+                                    </i>
+                                    <span>
+                                        My experience with Metagreen Innovations was very satisfactory, Mr Ezekiel and his
+                                        crew
+                                        did a fantastic installation and handle everything in a very timely and professional
+                                        manner. Great Job.
+                                    </span>
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            aria-hidden="true" focusable="false" width="2.5em" height="2.5em"
+                                            viewBox="0 0 24 24">
+                                            <path d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3l-2 4z" fill="#d58943" />
+                                        </svg>
+                                    </i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" focusable="false" width="3em" height="3em" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="#d58943" stroke-width="4" d="M17 2L7 12l10 10" />
+                                </svg>
+                            </i>
+                        </span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span>
+                            <i aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" focusable="false" width="3em" height="3em" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="#d58943" stroke-width="4" d="M7 2l10 10L7 22" />
+                                </svg>
+                            </i>
+                        </span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
 
         </div>
     </section>
-    {{-- ========== Clients Ends ========== --}}
+    {{-- ===== Testimonials ===== --}}
 @endsection

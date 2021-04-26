@@ -3,8 +3,8 @@
 
         <div class="card">
             <div class="card-pix">
-                <img src="{{ url('images/projects/' . $folder . '/' . $image . '.jpg') }}" class="card-img-top"
-                    alt="{{ $folder }}">
+                <img loading="lazy" src="{{ url('images/projects/' . $folder . '/' . $image . '.jpg') }}"
+                    class="card-img-top" alt="{{ $folder }}">
             </div>
             <div class="card-body">
                 <h3 class="card-title">Design, Supply & Installation</h3>
