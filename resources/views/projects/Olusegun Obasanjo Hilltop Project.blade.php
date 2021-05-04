@@ -36,12 +36,12 @@
                     <div class="project-gallery">
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Olusegun Obasanjo Hilltop Project/image1.jpg') }}">
-                            <img class="img-fluid"
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
                                 src="{{ url('/images/projects/Olusegun Obasanjo Hilltop Project/image1.jpg') }}">
                         </a>
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Olusegun Obasanjo Hilltop Project/image2.jpg') }}">
-                            <img class="img-fluid"
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
                                 src="{{ url('/images/projects/Olusegun Obasanjo Hilltop Project/image2.jpg') }}">
                         </a>
                     </div>
@@ -51,4 +51,11 @@
         </div>
     </div>
 
+@endsection
+
+@section('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.css" />
+@endsection
+@section('scripts')
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.js"></script>
 @endsection

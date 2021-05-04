@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 class PagesController extends Controller
 {
     public function index()
@@ -15,25 +16,21 @@ class PagesController extends Controller
         $innertitle = "About Us";
         return view('About Us', compact('metatitle', 'innertitle'));
     }
-
     public function project()
     {
-        $metatitle = "Our Projects | Metagreen Innovations";
+        $metatitle = "Projects | Metagreen Innovations";
         $innertitle = "Projects";
         return view('Projects', compact('metatitle', 'innertitle'));
     }
-
     public function projectpage($project_page)
     {
-        $metatitle = "Projects | Metagreen Innovations";
-        $innertitle = $project_page;
+        $metatitle = $innertitle = $project_page;
         return view('projects/' . $project_page, compact('metatitle', 'innertitle'));
     }
-
     public function service()
     {
         $innertitle = "Services";
-        $metatitle = "Our Services | Welcome to Metagreen Innovations";
+        $metatitle = "Services | Metagreen Innovations";
         return view('Services', compact('metatitle', 'innertitle'));
     }
 }

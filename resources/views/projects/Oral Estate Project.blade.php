@@ -17,7 +17,9 @@
 
                         <p> <b>Title:</b> <span>Design, Supply and Installation.</span> </p>
                         <p> <b>Location: </b> <span>Oral Estate, Lekki, Lagos State Nigeria. </span> </p>
-                        <p> <b>Date: </b> <span> November 2020.</span> </p>
+                        <p> <b>Date: </b>
+                            <spaloading="lazy" width="500" height="350" class="img-fluid bg-secondary" </span>
+                        </p>
                         <p> <b>Components: </b>
                             <span>
                                 <ul class="ml-5">
@@ -38,23 +40,28 @@
                     <div class="project-gallery">
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Oral Estate Project/image1.jpg') }}">
-                            <img class="img-fluid" src="{{ url('/images/projects/Oral Estate Project/image1.jpg') }}">
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
+                                src="{{ url('/images/projects/Oral Estate Project/image1.jpg') }}">
                         </a>
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Oral Estate Project/image2.jpg') }}">
-                            <img class="img-fluid" src="{{ url('/images/projects/Oral Estate Project/image2.jpg') }}">
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
+                                src="{{ url('/images/projects/Oral Estate Project/image2.jpg') }}">
                         </a>
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Oral Estate Project/image3.jpg') }}">
-                            <img class="img-fluid" src="{{ url('/images/projects/Oral Estate Project/image3.jpg') }}">
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
+                                src="{{ url('/images/projects/Oral Estate Project/image3.jpg') }}">
                         </a>
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Oral Estate Project/image4.jpg') }}">
-                            <img class="img-fluid" src="{{ url('/images/projects/Oral Estate Project/image4.jpg') }}">
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
+                                src="{{ url('/images/projects/Oral Estate Project/image4.jpg') }}">
                         </a>
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Oral Estate Project/image5.jpg') }}">
-                            <img class="img-fluid" src="{{ url('/images/projects/Oral Estate Project/image5.jpg') }}">
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
+                                src="{{ url('/images/projects/Oral Estate Project/image5.jpg') }}">
                         </a>
                     </div>
 
@@ -63,4 +70,11 @@
         </div>
     </div>
 
+@endsection
+
+@section('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.css" />
+@endsection
+@section('scripts')
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.js"></script>
 @endsection

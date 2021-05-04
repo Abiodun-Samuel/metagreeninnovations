@@ -3,7 +3,7 @@
 @section('content')
 
     <x-header pageheader="{{ $innertitle }}" subpageheader=""
-        pagedescription="Take a look at our recently completed projected executed with a touch of excellence and professionalism." />
+        pagedescription="Take a look at our recently completed projects executed with a touch of excellence and professionalism." />
 
     <div class="projects my-5">
         <div class="container">
@@ -15,7 +15,7 @@
                     description="20KVA Complete Solar System at Buena Vista Estate (Project 1)." image="image3" />
 
                 <x-project aos="100" folder="Lekki County Homes Project"
-                    description="2KVA Complete System at Lekki County Homes." image="image3" />
+                    description="5KVA Complete System at Lekki County Homes." image="image3" />
 
                 <x-project aos="150" folder="Buena Vista Estate Project 2"
                     description="20KVA Complete Solar System at Buena Vista Estate (Project 2)." image="image1" />

@@ -37,42 +37,42 @@
                     <div class="project-gallery">
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Buena Vista Estate Project 1/image1.jpg') }}">
-                            <img class="img-fluid"
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
                                 src="{{ url('/images/projects/Buena Vista Estate Project 1/image1.jpg') }}">
                         </a>
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Buena Vista Estate Project 1/image2.jpg') }}">
-                            <img class="img-fluid"
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
                                 src="{{ url('/images/projects/Buena Vista Estate Project 1/image2.jpg') }}">
                         </a>
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Buena Vista Estate Project 1/image3.jpg') }}">
-                            <img class="img-fluid"
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
                                 src="{{ url('/images/projects/Buena Vista Estate Project 1/image3.jpg') }}">
                         </a>
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Buena Vista Estate Project 1/image4.jpg') }}">
-                            <img class="img-fluid"
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
                                 src="{{ url('/images/projects/Buena Vista Estate Project 1/image4.jpg') }}">
                         </a>
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Buena Vista Estate Project 1/image5.jpg') }}">
-                            <img class="img-fluid"
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
                                 src="{{ url('/images/projects/Buena Vista Estate Project 1/image5.jpg') }}">
                         </a>
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Buena Vista Estate Project 1/image8.jpg') }}">
-                            <img class="img-fluid"
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
                                 src="{{ url('/images/projects/Buena Vista Estate Project 1/image8.jpg') }}">
                         </a>
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Buena Vista Estate Project 1/image6.jpg') }}">
-                            <img class="img-fluid"
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
                                 src="{{ url('/images/projects/Buena Vista Estate Project 1/image6.jpg') }}">
                         </a>
                         <a class="venobox" data-gall="gallery01"
                             href="{{ url('/images/projects/Buena Vista Estate Project 1/image7.jpg') }}">
-                            <img class="img-fluid"
+                            <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary"
                                 src="{{ url('/images/projects/Buena Vista Estate Project 1/image7.jpg') }}">
                         </a>
                     </div>
@@ -81,4 +81,11 @@
         </div>
     </div>
 
+@endsection
+
+@section('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.css" />
+@endsection
+@section('scripts')
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.js"></script>
 @endsection

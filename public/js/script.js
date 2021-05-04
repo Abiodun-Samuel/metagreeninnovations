@@ -1,4 +1,18 @@
-   $(document).ready(function () {
+(function ($) {
+    "use strict";
+
+    // Animate on scroll Init
+    function aos_init() {
+        AOS.init({
+            once: false,
+            mirror: true,
+        });
+    }
+    $(window).on("load", function () {
+        aos_init();
+    });
+
+    $(document).ready(function () {
         var previousScroll = 0;
         $(window).scroll(function () {
             var currentScroll = $(this).scrollTop();
@@ -22,28 +36,21 @@
         }
     });
 
-    // Animate on scroll Init
-    function aos_init() {
-        AOS.init({
-            once: false,
-             mirror:true,
+    // venobox
+    var veno = document.querySelector(".venobox");
+    if (veno) {
+        $(".venobox").venobox({
+            numeratio: true,
+            autoplay: true,
+            arrowsColor: "#d58943",
+            numerationPosition: "bottom",
+            spinner: "cube-grid",
+            spinColor: "#d58943",
+            closeColor: "#d58943",
         });
     }
-    $(window).on("load", function () {
-        aos_init();
-    });
 
-     $(".venobox").venobox({
-        numeratio: true,
-        autoplay: true,
-        arrowsColor: "#d58943",
-        numerationPosition: "bottom",
-        spinner: "cube-grid",
-        spinColor: "#d58943",
-         closeColor: "#d58943",
-     });
-
- // Hero Carousel
+    // Hero Carousel
     $(".carousel").carousel({
         interval: 1500,
         pause: false,
@@ -70,42 +77,7 @@
         return false;
     });
 
-// typed js
-    var typed = new Typed("#typed", {
-        strings: [
-            "Homes.",
-            "Hospitals.",
-            "Offices.",
-            "SMEs.",
-            "Churches.",
-            "And More.",
-        ],
-        smartBackspace: true,
-        typeSpeed: 60,
-        backSpeed: 30,
-        loop: true,
-        loopCount: Infinity,
-    });
-
-// gsap
-// gsap.registerPlugin(ScrollTrigger);
-var rule = CSSRulePlugin.getRule("#hero h1:after");
-var tl = gsap.timeline({ defaults: { duration: 0.6 } });
-tl.to(rule, { cssRule: { scaleY: 0 } })
-    .from(".anim", { y: 50, stagger: 0.3, opacity: 0 })
-    .from(".anim-img", { x: 50, opacity: 0 });
-
-(function($) {
-   "use strict";
-
-  // Preloader
-//   $(window).on('load', function() {
-//     if ($('#loader').length) {
-//       $('#loader').delay(100).fadeOut('slow', function() {
-//         $(this).remove();
-//       });
-//     }
-//   });
-
+    // Footer Year
+    document.getElementById("year").innerHTML = new Date().getFullYear();
 
 })(jQuery);

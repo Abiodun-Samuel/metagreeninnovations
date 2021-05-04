@@ -10,5 +10,4 @@
             <p class="card-text"> {{ $description }} </p>
         </div>
     </div>
-
 </div>

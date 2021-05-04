@@ -23,7 +23,7 @@
                     </p>
                 </div>
                 <div class="col-lg-4 col-md-6 my-3" data-aos="fade-up" data-aos-delay="50">
-                    <img class="img-fluid bg-secondary mt-5 mb-3" loading" src="{{ url('/images/solar2.jpg') }}"
+                    <img class="img-fluid bg-secondary mt-5 mb-3" loading="lazy" src="{{ url('/images/solar2.jpg') }}"
                         alt="solar panel" width="495" height="350">
                 </div>
                 <div class="col-lg-4 col-md-6 p-3 my-3" data-aos="fade-up" data-aos-delay="100">
@@ -46,7 +46,7 @@
                     <h4>
                         OUR MISSION
                     </h4>
-                    <img class="img-fluid my-3" loading" src="{{ url('/images/mission.svg') }}" alt="our mission"
+                    <img class="img-fluid my-3" loading="lazy" src="{{ url('/images/mission.svg') }}" alt="our mission"
                         width="80" height="80">
                     <p>
                         Giving people access to sustainable and affordable power solutions.
@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 my-4 align-items-stretch" data-aos="fade-up" data-aos-delay="50">
                     <h4>OUR VISION</h4>
-                    <img class="img-fluid my-3" loading" src="{{ url('/images/vision.svg') }}" alt="our mission"
+                    <img class="img-fluid my-3" loading="lazy" src="{{ url('/images/vision.svg') }}" alt="our mission"
                         width="80" height="80">
                     <p>
                     <p>Fully committed to providing every Nigerian a ready access to innovative, competitive,
@@ -77,8 +77,8 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 my-5 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="card">
                         <div class="card-pix">
-                            <img loading="lazy" src="{{ url('images/team/ceo.jpg') }}" class="img-fluid"
-                                alt="Olorunnibi Ezekiel Dunsin">
+                            <img loading="lazy" src="{{ url('images/team/ceo.jpg') }}" class="img-fluid bg-secondary"
+                                alt="Olorunnibi Ezekiel Dunsin" width="150" height="150">
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Olorunnibi Ezekiel Dunsin</h4>
@@ -97,8 +97,8 @@
                     data-aos-delay="50">
                     <div class="card">
                         <div class="card-pix">
-                            <img loading="lazy" src="{{ url('images/team/adegoke.jpg') }}" class="img-fluid"
-                                alt="team member">
+                            <img loading="lazy" src="{{ url('images/team/adegoke.jpg') }}" class="img-fluid bg-secondary"
+                                alt="team member" width="150" height="150">
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Adegoke Seun John</h4>
@@ -115,8 +115,8 @@
                     data-aos-delay="100">
                     <div class="card">
                         <div class="card-pix">
-                            <img loading="lazy" src="{{ url('images/team/tiamiyu.jpg') }}" class="img-fluid"
-                                alt="team member">
+                            <img loading="lazy" src="{{ url('images/team/tiamiyu.jpg') }}" class="img-fluid bg-secondary"
+                                alt="team member" width="150" height="150">
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Tiamiyu Toheeb Oyetunde</h4>
@@ -130,8 +130,8 @@
                     data-aos-delay="150">
                     <div class="card">
                         <div class="card-pix">
-                            <img loading="lazy" src="{{ url('images/team/oladeinde.jpg') }}" class="img-fluid"
-                                alt="team member">
+                            <img loading="lazy" src="{{ url('images/team/oladeinde.jpg') }}" class="img-fluid bg-secondary"
+                                alt="team member" width="150" height="150">
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Oladeinde Jamiu</h4>

@@ -2,8 +2,9 @@
 
 @section('content')
 
-    <x-header pageheader="{{ $innertitle }}" subpageheader="" pagedescription="We'd love to hear about your project and help you get started, Let's talk about how we can help you
-                                                                                            achieve your goals." />
+    <x-header pageheader="{{ $innertitle }}" subpageheader=""
+        pagedescription="We'd love to hear about your project and help you get started, Let's talk about how we can help you
+                                                                                                                                achieve your goals." />
 
     <div class="contact">
         <div class="container">
@@ -73,11 +74,13 @@
                         </div>
 
                         <div class="form-group col-lg-12 my-3">
-                            <div class="g-recaptcha img-fluid" data-sitekey="{{ config('services.recaptcha.key') }}">
+                            <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.key') }}">
                             </div>
                         </div>
 
-                        <div class="text-center"><button type="submit">SEND MESSAGE</button></div>
+                        <div class="text-center">
+                            <button class="submit" type="submit"> SEND MESSAGE</button>
+                        </div>
 
                         <p class="my-3">This site is protected by reCAPTCHA and the Google <a
                                 href="{{ url('https://policies.google.com/privacy') }}">Privacy Policy</a> and <a
@@ -148,4 +151,8 @@
         </div>
     </div>
 
+@endsection
+
+@section('scripts')
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js" async defer></script>
 @endsection

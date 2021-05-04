@@ -3,8 +3,9 @@
 
         <div class="card">
             <div class="card-pix">
-                <img loading="lazy" src="{{ url('images/projects/' . $folder . '/' . $image . '.jpg') }}"
-                    class="card-img-top" alt="{{ $folder }}">
+                <img loading="lazy" width="500" height="350"
+                    src="{{ url('images/projects/' . $folder . '/' . $image . '.jpg') }}"
+                    class="card-img-top bg-secondary" alt="{{ $folder }}">
             </div>
             <div class="card-body">
                 <h3 class="card-title">Design, Supply & Installation</h3>
@@ -12,5 +13,4 @@
                 <a href="{{ url('/projects/' . $folder) }}"> Read More</a>
             </div>
         </div>
-
     </div>

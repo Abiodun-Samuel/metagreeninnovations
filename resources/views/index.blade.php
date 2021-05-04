@@ -31,12 +31,14 @@
                         </ol>
                         <div class="carousel-inner anim-img">
                             <div class="carousel-item active">
-                                <img src="{{ url('/images/projects/Buena Vista Estate Project 1/image1.jpg') }}"
+                                <img loading="lazy"
+                                    src="{{ url('/images/projects/Buena Vista Estate Project 1/image1.jpg') }}"
                                     class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
                                     width="500">
                             </div>
                             <div class="carousel-item ">
-                                <img src="{{ url('/images/projects/Buena Vista Estate Project 1/image2.jpg') }}"
+                                <img loading="lazy"
+                                    src="{{ url('/images/projects/Buena Vista Estate Project 1/image2.jpg') }}"
                                     class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
                                     width="500">
                             </div>
@@ -67,7 +69,7 @@
     {{-- ===== Hero Ends ===== --}}
 
     <!-- ====== About ====== -->
-    <div class="about">
+    <section class="about">
         <div class="container">
             <div class="row">
 
@@ -108,7 +110,8 @@
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch my-3" data-aos="fade-up">
                     <div class="icon-box ">
-                        <div class="icon my-1"><img src="{{ url('/images/mission.svg') }}" alt="Our mission">
+                        <div class="icon my-1"><img loading="lazy" src="{{ url('/images/mission.svg') }}"
+                                alt="Our mission">
                         </div>
                         <h4>Our Mission</h4>
                         <p>Giving people access to sustainable and affordable power solutions
@@ -118,7 +121,7 @@
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch my-3" data-aos="fade-up" data-aos-delay="50">
                     <div class="icon-box ">
-                        <div class="icon my-1"><img src="{{ url('/images/vision.svg') }}" alt="Our vision">
+                        <div class="icon my-1"><img loading="lazy" src="{{ url('/images/vision.svg') }}" alt="Our vision">
                         </div>
                         <h4>Our Vision</h4>
                         <p>We are fully committed to providing every Nigerian a ready access to innovative,
@@ -130,7 +133,7 @@
 
             </div>
         </div>
-    </div>
+    </section>
     <!-- ===== About Ends ====== -->
 
     {{-- Why Solar --}}
@@ -142,12 +145,13 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div data-aos="fade-up" class="why-text">
-                        <img src="{{ url('/images/services/start/solar-panel.svg') }}" alt="ABUNDANT ENERGY SOURCE">
+                        <img loading="lazy" src="{{ url('/images/services/start/solar-panel.svg') }}"
+                            alt="ABUNDANT ENERGY SOURCE">
                         <h3>FREE & ABUNDANT ENERGY SOURCE</h3>
                         <p> Solar energy serves as an important source of renewable
                             energy.</p>
 
-                        <img src="{{ url('/images/services/start/energetic.svg') }}" alt="constant power">
+                        <img loading="lazy" src="{{ url('/images/services/start/energetic.svg') }}" alt="constant power">
                         <h3>
                             Reliable & Consistent Power Supply
                         </h3>
@@ -158,18 +162,19 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="why-box" data-aos-delay="100" data-aos="fade-up">
 
-                        <img title="solar Panel" class="img-thumbnail " src="{{ url('/images/solar.jpg') }}"
-                            alt="importance of solar">
+                        <img loading="lazy" title="solar Panel" class="img-thumbnail "
+                            src="{{ url('/images/solar.jpg') }}" alt="importance of solar">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
 
                     <div data-aos="fade-up" data-aos-delay="200" class="why-text">
-                        <img src="{{ url('/images/services/start/tool-box.svg') }}" alt="maintainance free">
+                        <img loading="lazy" src="{{ url('/images/services/start/tool-box.svg') }}"
+                            alt="maintainance free">
                         <h3>MAINTENANCE FREE</h3>
                         <p>By going in for solar power, you will cut your cost of
                             electricity at home or office</p>
-                        <img src="{{ url('/images/services/start/earth-globe.svg') }}" alt="eco friendly">
+                        <img loading="lazy" src="{{ url('/images/services/start/earth-globe.svg') }}" alt="eco friendly">
                         <h3>
                             ECO FRIENDLY
                         </h3>
@@ -212,6 +217,7 @@
 
     </section>
     <!-- ===== Services Ends ====== -->
+
     <!-- ===== Projects  ====== -->
     <section class="projects">
         <div class="container">
@@ -228,7 +234,7 @@
                 <x-project aos="50" folder="Buena Vista Estate Project 1"
                     description="20KVA Complete Solar System at Buena Vista Estate (Project 1)." image="image4" />
                 <x-project aos="100" folder="Lekki County Homes Project"
-                    description="2KVA Complete System at Lekki County Homes." image="image2" />
+                    description="5KVA Complete System at Lekki County Homes." image="image2" />
             </div>
 
             <div class="my-5">
@@ -256,10 +262,10 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="startbox text-center p-5 my-2">
                         <h3>Contact</h3>
-                        <img src="{{ url('/images/services/start/contact.svg') }}" alt="contact us now">
+                        <img loading="lazy" src="{{ url('/images/services/start/contact.svg') }}" alt="contact us now">
                         <p>To get started you can contact us below or give us a call right away.</p>
 
                         <a href="{{ url('/Contact Us') }}">Contact</a>
@@ -267,29 +273,32 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="50">
+                <div class="col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="50">
                     <div class="startbox text-center p-5 my-2">
                         <h3>Power Assessment</h3>
-                        <img src="{{ url('/images/services/start/assessment.svg') }}" alt="Power assessment">
+                        <img loading="lazy" src="{{ url('/images/services/start/assessment.svg') }}"
+                            alt="Power assessment">
                         <p>Give us details of all the electrical appliances you wish to power with the solar system and we
                             will recommend the best system that will suit your need.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                     <div class="startbox text-center p-5 my-2">
                         <h3> Contract & Payment</h3>
-                        <img src="{{ url('/images/services/start/negotiation.svg') }}" alt="Contract and payment">
+                        <img loading="lazy" src="{{ url('/images/services/start/negotiation.svg') }}"
+                            alt="Contract and payment">
                         <p> Afterwards, we will send you a quote and an agreement form. Sign the form and make payment. <br>
                             <em> (Payment validates order)</em>
                         </p>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
                     <div class="startbox text-center p-5 my-2">
                         <h3>Installation </h3>
-                        <img src="{{ url('/images/services/start/installation.svg') }}" alt="installation">
+                        <img loading="lazy" src="{{ url('/images/services/start/installation.svg') }}"
+                            alt="installation">
                         <p> Once Payment has been made. Our team of proffessional engineers will install your solar system.
                         </p>
 
@@ -313,13 +322,26 @@
                 {{-- Clients --}}
                 <div data-aos="fade-up">
                     <div class="partners text-center">
-                        <img class="img-fluid figure  m-3" src="{{ url('images/clients/lento.jpg') }}" alt="Our Clients">
-                        <img class="img-fluid figure m-3" src="{{ url('images/clients/famicare.jpg') }}"
+                        <img loading="lazy" class="img-fluid figure  m-3" src="{{ url('images/clients/lento.jpg') }}"
                             alt="Our Clients">
-                        <img class="img-fluid figure m-3" src="{{ url('images/clients/felicity.jpg') }}"
+                        <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/famicare.jpg') }}"
                             alt="Our Clients">
-                        <img class="img-fluid figure m-3" src="{{ url('images/clients/samba.jpg') }}" alt="Our Clients">
-                        <img class="img-fluid figure m-3" src="{{ url('images/clients/wandel.jpg') }}" alt="Our Clients">
+                        <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/felicity.jpg') }}"
+                            alt="Our Clients">
+                        <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/samba.jpg') }}"
+                            alt="Our Clients">
+                        <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/wandel.jpg') }}"
+                            alt="Our Clients">
+                        <a href="{{ url('https://www.maldynsolution.com') }}">
+                            <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/maldyn.jpg') }}"
+                                alt="Our Clients">
+                        </a>
+                        <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/genus.jpg') }}"
+                            alt="Our Clients">
+                        <a href="{{ url('https://www.electrokristron.com') }}">
+                            <img loading="lazy" class="img-fluid figure m-3"
+                                src="{{ url('images/clients/electron.jpg') }}" alt="Our Clients">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -339,7 +361,8 @@
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner text-center">
                         <div class="carousel-item active">
-                            <img src="{{ url('/images/testimonials/image1.jpg') }}" class="img-thumbnail" alt="">
+                            <img loading="lazy" src="{{ url('/images/testimonials/image1.jpg') }}" class="img-thumbnail"
+                                alt="">
                             <div class="text-center">
                                 <h5> Mr. Eneje Ikenna (Oral Estate, Lekki) </h5>
                                 <p>
@@ -394,5 +417,60 @@
 
         </div>
     </section>
-    {{-- ===== Testimonials ===== --}}
+    {{-- ===== Testimonials Ends ===== --}}
+
+@endsection
+
+@section('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/CSSRulePlugin.min.js"></script>
+    <script>
+        // Typejs
+        var typejs = document.getElementById('typed')
+        if (typejs) {
+            var typed = new Typed("#typed", {
+                strings: [
+                    "Homes.",
+                    "Hospitals.",
+                    "Offices.",
+                    "SMEs.",
+                    "Churches.",
+                    "And More.",
+                ],
+                smartBackspace: true,
+                typeSpeed: 60,
+                backSpeed: 30,
+                loop: true,
+                loopCount: Infinity,
+            });
+        }
+
+        // load gsap
+        var anim_img = document.querySelector('.anim-img')
+        if (anim_img) {
+            var rule = CSSRulePlugin.getRule("#hero h1:after");
+            var tl = gsap.timeline({
+                defaults: {
+                    duration: 0.6
+                }
+            });
+            tl.to(rule, {
+                    cssRule: {
+                        scaleY: 0
+                    }
+                })
+                .from(".anim", {
+                    y: 50,
+                    stagger: 0.3,
+                    opacity: 0
+                })
+                .from(".anim-img", {
+                    x: 50,
+                    opacity: 0
+                });
+        }
+
+    </script>
+
 @endsection
