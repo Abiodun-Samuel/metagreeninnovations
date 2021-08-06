@@ -25,11 +25,12 @@
 
     {{-- ========== CSS Libraries ========== --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-    @yield('styles')
+    <link rel="stylesheet" href="{{ url('/css/app.css?ver=1.01') }}">
+    @stack('styles')
 
     {{-- ========== Custom CSS  ========== --}}
-    <link rel="stylesheet" href="{{ url('css/style.css?ver=1.01') }}">
+    <link rel="stylesheet" href="{{ url('style.css?ver=1.2') }}" />
+    {{-- <link rel="stylesheet" href="{{ url('/css/style.css?ver=1.0') }}" /> --}}
 
 </head>
 
@@ -62,6 +63,15 @@
                         <a class="nav-link" href="{{ url('/Services') }}"> SERVICES </a>
                         <a class="nav-link" href="{{ url('/Projects') }}"> PROJECTS </a>
                         <a class="nav-link" href="{{ url('/Contact Us') }}"> CONTACT </a>
+                        @auth
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <button class="nav-link auth-btn">LOGOUT</button>
+                            </form>
+                        @endauth
+                        @guest
+                            <a class="nav-link auth-btn" href="{{ route('login') }}"> LOGIN </a>
+                        @endguest
                     </div>
                 </div>
             </div>
@@ -154,24 +164,8 @@
                                     </svg>
                                 </i>
                             </a>
-
-                            {{-- instagram --}}
-                            {{-- <a href="">
-                                <i>
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        aria-hidden="true" focusable="false" width="2.5rem" height="2.5rem"
-                                        style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
-                                        preserveAspectRatio="xMidYMid meet" viewBox="0 0 1025 1024">
-                                        <path
-                                            d="M320.428 512q0-80 56-136t136-56t136 56t56 136t-56 136t-136 56t-136-56t-56-136zm704-64v448q0 53-37.5 90.5t-90.5 37.5h-768q-53 0-90.5-37.5T.428 896V128q0-53 37.5-90.5t90.5-37.5h768q53 0 90.5 37.5t37.5 90.5v192h-256q-45-59-112-93.5t-144-34.5t-144 34.5t-112 93.5h-256v128h198q-6 32-6 64q0 87 43 160.5t116.5 116.5t160.5 43t160.5-43t116.5-116.5t43-160.5q0-32-6-64h198z"
-                                            fill="#AAB7B8" />
-                                    </svg>
-                                </i>
-                            </a> --}}
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
@@ -188,8 +182,6 @@
             </div>
         </div>
     </footer>
-
-
 
     {{-- Fixed buttons --}}
     <a href="" class="back-to-top">
@@ -209,19 +201,15 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    <script src="{{ url('js/app.js') }}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js">
     </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
-    </script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-    @yield('scripts')
+    @stack('scripts')
 
-    <script src="{{ url('js/script.js') }}"></script>
+    <script src="{{ url('script.js?ver=1.0') }}"></script>
+    {{-- <script src="{{ url('/js/script.js?ver=1.0') }}"></script> --}}
 
 </body>
 

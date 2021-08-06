@@ -9,24 +9,20 @@
 
         <div class="container">
             <div class="row">
-                <x-service aos="0" title="Supply of inverter and solar system components"
-                    description="We sell and supply inverters of different capacities, inverter batteries, solar panels and charge controllers are available at competitive prices."
-                    icon="6" />
-                <x-service aos="50" title="Solar System design and installation"
-                    description="One of the factors that contribute to a failed solar system is poor design from the onset. We design using standard approach and carry out installations using industry best practice."
-                    icon="7" />
-                <x-service aos="100" title="Inverter | ups System Sizing and Installation"
-                    description="Sizing an inverter is an important part of any installation, big or small. Batteries send DC electricity to your inverter, you need to have an inverter size that can handle the load and convert it to AC power. This requires knowing how to size an inverter properly. We can help you with this"
-                    icon="6" />
-                <x-service aos="150" title="Solar street lighting projects design and execution"
-                    description="Get your street illuminated with solar lights at affordable cost. You will surely need our solutions."
-                    icon="7" />
-                <x-service aos="200" title="Supply & installation of Solar Water Pumps & Heating Systems"
-                    description="Solar pumps and solar water heating systems are a great way to cut down electricity bills. Thinking of embracing the technology? Metagreen innovations comes handy here."
-                    icon="6" />
-                <x-service aos="250" title="General consultancy"
-                    description="We are available to listen to you and advise you on issues that relate to your electricity needs. Our business acumen may just be what you need to bridge the gap in solving your energy problems."
-                    icon="7" />
+                @foreach ($services as $service)
+                    <div class="col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch my-4" data-aos="fade-up"
+                        data-aos-delay="{{ $service->aos }}">
+                        <div class="card text-center">
+                            <figure>
+                                <img loading="lazy" src="{{ url('/images/services/icon/'.$service->id.'.svg') }}" alt="service icon">
+                            </figure>
+                            <h3 class="card-title"> {{ $service->title }}</h3>
+                            <div class="card-body">
+                                <p class="card-text"> {{ $service->description }} </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
 

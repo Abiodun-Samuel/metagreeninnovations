@@ -197,24 +197,25 @@
                 <p>We specialize in the provision of viable alternative Power backup and renewable energy solutions
                     using innovative and industry best practice. We do this through the following services</p>
             </div>
-            <div class="row">
-                <x-service aos="0" title="Supply of inverter and solar system components"
-                    description="We sell and supply inverters of different capacities, inverter batteries, solar panels and charge controllers are available at competitive prices." />
-                <x-service aos="50" title="Solar System design and installation"
-                    description="One of the factors that contribute to a failed solar system is poor design from the onset. We design using standard approach and carry out installations using industry best practice." />
-                <x-service aos="100" title="Inverter | ups System Sizing and Installation"
-                    description="Sizing an inverter is an important part of any installation, big or small. Batteries send DC electricity to your inverter, you need to have an inverter size that can handle the load and convert it to AC power. This requires knowing how to size an inverter properly. We can help you with this." />
 
-                <x-service aos="150" title="Solar street lighting projects design and execution"
-                    description="Get your street illuminated with solar lights at affordable cost. You will surely need our solutions." />
-                <x-service aos="200" title="Supply & installation of Solar Water Pumps & Heating Systems"
-                    description="Solar pumps and solar water heating systems are a great way to cut down electricity bills. Thinking of embracing the technology? Metagreen innovations comes handy here." />
-                <x-service aos="250" title="General consultancy"
-                    description="We are available to listen to you and advise you on issues that relate to your electricity needs. Our business acumen may just be what you need to bridge the gap in solving your energy problems." />
+            <div class="row">
+                @foreach ($services as $service)
+                    <div class="col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch my-4" data-aos="fade-up"
+                        data-aos-delay="{{ $service->aos }}">
+                        <div class="card text-center">
+                            <figure>
+                                <img loading="lazy" src="{{ url('/images/services/icon/' . $service->id . '.svg') }}"
+                                    alt="service icon">
+                            </figure>
+                            <h3 class="card-title"> {{ $service->title }}</h3>
+                            <div class="card-body">
+                                <p class="card-text"> {{ $service->description }} </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
-        </div>
-
     </section>
     <!-- ===== Services Ends ====== -->
 
@@ -312,6 +313,34 @@
     </section>
     {{-- Get Started --}}
 
+    {{-- ==== Testimonials ===== --}}
+    <section class="testimonials">
+        <div class="container">
+            <div class="header">
+                <h2>Customer Testimonials</h2>
+                <p>Read what our valued customers have to say about us.</p>
+            </div>
+
+            <div class="row" data-aos="fade-up">
+                <div class="col-lg-12">
+                    <div class="my-slider">
+                        @foreach ($clients as $client)
+                            <div class="card p-5">
+                                <img class="img-fluid" src="{{ url('storage/images/testimonials/' . $client->image) }}"
+                                    alt="{{ $client->name }}" title="{{ $client->name }}">
+
+                                <h3>{{ $client->name }}</h3>
+                                <span>({{ $client->address }})</span>
+                                <p>&#34; {{ $client->comments }} &#34;</p>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- ===== Testimonials Ends ===== --}}
+
     {{-- ==== Partners ===== --}}
     <section>
         <div class="container">
@@ -323,24 +352,24 @@
                 <div data-aos="fade-up">
                     <div class="partners text-center">
                         <img loading="lazy" class="img-fluid figure  m-3" src="{{ url('images/clients/lento.jpg') }}"
-                            alt="Our Clients">
+                            alt="Our Partners">
                         <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/famicare.jpg') }}"
-                            alt="Our Clients">
+                            alt="Our Partners">
                         <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/felicity.jpg') }}"
-                            alt="Our Clients">
+                            alt="Our Partners">
                         <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/samba.jpg') }}"
-                            alt="Our Clients">
+                            alt="Our Partners">
                         <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/wandel.jpg') }}"
-                            alt="Our Clients">
+                            alt="Our Partners">
                         <a href="{{ url('https://www.maldynsolution.com') }}">
                             <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/maldyn.jpg') }}"
-                                alt="Our Clients">
+                                alt="Our Partners">
                         </a>
                         <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/genus.jpg') }}"
-                            alt="Our Clients">
+                            alt="Our Partners">
                         <a href="{{ url('https://www.electrokristron.com') }}">
                             <img loading="lazy" class="img-fluid figure m-3"
-                                src="{{ url('images/clients/electron.jpg') }}" alt="Our Clients">
+                                src="{{ url('images/clients/electron.jpg') }}" alt="Our Partners">
                         </a>
                     </div>
                 </div>
@@ -349,82 +378,17 @@
     </section>
     {{-- ==== Partners ===== --}}
 
-    {{-- ==== Testimonials ===== --}}
-    <section class="testimonials">
-        <div class="container">
-            <div class="header">
-                <h2>Customer Testimonials</h2>
-                <p>Read what our valued customers have to say about us.</p>
-            </div>
-
-            <div class="row" data-aos="fade-up">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner text-center">
-                        <div class="carousel-item active">
-                            <img loading="lazy" src="{{ url('/images/testimonials/image1.jpg') }}" class="img-thumbnail"
-                                alt="">
-                            <div class="text-center">
-                                <h5> Mr. Eneje Ikenna (Oral Estate, Lekki) </h5>
-                                <p>
-                                    <i>
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            aria-hidden="true" focusable="false" width="2.5em" height="2.5em"
-                                            viewBox="0 0 24 24">
-                                            <path d="M10 7l-2 4h3v6H5v-6l2-4h3m8 0l-2 4h3v6h-6v-6l2-4h3z" fill="#d58943" />
-                                        </svg>
-                                    </i>
-                                    <span>
-                                        My experience with Metagreen Innovations was very satisfactory, Mr Ezekiel and his
-                                        crew
-                                        did a fantastic installation and handle everything in a very timely and professional
-                                        manner. Great Job.
-                                    </span>
-                                    <i>
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            aria-hidden="true" focusable="false" width="2.5em" height="2.5em"
-                                            viewBox="0 0 24 24">
-                                            <path d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3l-2 4z" fill="#d58943" />
-                                        </svg>
-                                    </i>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span>
-                            <i aria-hidden="true">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    aria-hidden="true" focusable="false" width="3em" height="3em" viewBox="0 0 24 24">
-                                    <path fill="none" stroke="#d58943" stroke-width="4" d="M17 2L7 12l10 10" />
-                                </svg>
-                            </i>
-                        </span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span>
-                            <i aria-hidden="true">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    aria-hidden="true" focusable="false" width="3em" height="3em" viewBox="0 0 24 24">
-                                    <path fill="none" stroke="#d58943" stroke-width="4" d="M7 2l10 10L7 22" />
-                                </svg>
-                            </i>
-                        </span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    {{-- ===== Testimonials Ends ===== --}}
-
 @endsection
 
-@section('scripts')
+@push('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+@endpush
+
+@push('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/CSSRulePlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script>
         // Typejs
         var typejs = document.getElementById('typed')
@@ -471,6 +435,21 @@
                 });
         }
 
+        // testimonials slider
+        var slider = tns({
+            container: '.my-slider',
+            slideBy: 'page',
+            autoplay: false,
+            responsive: {
+                640: {
+                    items: 2
+                },
+                900: {
+                    items: 3
+                }
+            }
+
+        });
     </script>
 
-@endsection
+@endpush
