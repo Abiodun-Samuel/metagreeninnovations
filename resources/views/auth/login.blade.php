@@ -2,9 +2,9 @@
 
 @section('auth')
     <section class="auth">
-        <div class="container mb-5">
-            <div class="row d-flex justify-content-center mt-5">
-                <div class="col-lg-5 mt-5">
+        <div class="container">
+            <div class="row d-flex justify-content-center mt-4">
+                <div class="col-lg-5 mt-3">
                     <div class="auth-card">
                         <img class="img-fluid mx-auto mb-5" src="{{ url('images/logo.jpg') }}"
                             alt="metagreen innovations logo">

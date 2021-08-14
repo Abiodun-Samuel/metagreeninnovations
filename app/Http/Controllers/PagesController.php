@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Project;
 use App\Models\Service;
 
 
@@ -12,8 +13,10 @@ class PagesController extends Controller
     {
         $services = Service::get(['id', 'aos', 'title', 'description']);
         $clients = Client::with('user')->get();
+        $projects = Project::with('user')->paginate(3);
+        $project_img = Project::with('user')->get();
         $metatitle = "Home | Welcome to Metagreen Innovations";
-        return view('index', compact('metatitle', 'services', 'clients'));
+        return view('index', compact('metatitle', 'services', 'clients', 'projects', 'project_img'));
     }
     public function about()
     {
@@ -25,7 +28,8 @@ class PagesController extends Controller
     {
         $metatitle = "Projects | Metagreen Innovations";
         $innertitle = "Projects";
-        return view('Projects', compact('metatitle', 'innertitle'));
+        $projects = Project::with('user')->get();
+        return view('Projects', compact('metatitle', 'innertitle', 'projects'));
     }
     public function projectpage($project_page)
     {

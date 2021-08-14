@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServicesTable extends Migration
+class AddColumnToProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
-            $table->id();
-            $table->integer('aos');
-            $table->string('title');
-            $table->text('description');
-            $table->timestamps();
+        Schema::table('projects', function (Blueprint $table) {
+            $table->string('image_main');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services');
+        Schema::table('projects', function (Blueprint $table) {
+            //
+        });
     }
 }

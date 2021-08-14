@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Client;
+use App\Models\Project;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -45,5 +46,9 @@ class User extends Authenticatable implements MustVerifyEmail
     public function client()
     {
         return $this->hasMany(Client::class);
+    }
+    public function project()
+    {
+        return $this->hasMany(Project::class);
     }
 }

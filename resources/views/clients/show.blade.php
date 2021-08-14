@@ -42,51 +42,27 @@
                 class="nav-link text-light bg-primary my-2 px-3 py-1 d-inline-block">Homepage</a>
 
             <div class="row d-flex justify-content-center">
-                <div class="col-lg-6">
-                    <div class="clients p-4">
+                <div class="col-lg-7">
+                    <div class="clients text-center p-4">
                         <a href="{{ route('home') }}"><img loading="lazy" class="mx-auto mb-5 bg-white"
                                 src="{{ url('images/logo.jpg') }}" alt="Metagreen Innovations"
                                 title="Metagreen Innovations" height="50" width="181"></a>
 
-                        <h3>Thank You For Patronizing Us!</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti accusamus sapiente minus
-                            explicabo nulla iusto, inventore sunt dolore repudiandae aperiam necessitatibus consequuntur
-                            tempore facilis iure sequi in eveniet maiores, omnis atque fugiat </p>
+                        <h3>{{ $client->name }}'s Testimonials</h3>
 
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <p class="my-0">{{ $error }}</p>
-                                @endforeach
-                            </div>
-                        @endif
+                        <div class="">
+                            <img class="img-fluid mx-auto my-3"
+                                src="{{ url('storage/images/testimonials/' . $client->image) }}"
+                                alt="{{ $client->name }}" title="{{ $client->name }}">
 
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                <p>{{ session('status') }}</p>
-                            </div>
-                        @endif
+                            <h3>{{ $client->name }}</h3>
+                            <span>({{ $client->address }})</span>
+                            <p>&#34; {{ $client->comments }} &#34;</p>
 
-                        <form class="mt-4" action="{{ route('clients.store') }}" method="post"
-                            enctype="multipart/form-data">
-                            @csrf
 
-                            <label for="name">Name*</label>
-                            <input type="text" name="name" value="{{ old('name') }}" id="name">
-
-                            <label for="comment">Comments*</label>
-                            <textarea name="comments" id="comments" rows="3">{{ old('comments') }}</textarea>
-
-                            <label for="address">Address(State & City)*</label>
-                            <input type="text" name="address" value="{{ old('address') }}" id="address">
-
-                            <label for="image">Upload your picture* </label> <br>
-                            <input type="file" name="image" id="image"><br>
-                            <span>(formats: jpeg|jpg|png, file-size: less than 2048mb)</span>
-
-                            <button type="submit">Submit</button>
-                        </form>
-
+                            <a class="btn btn-success px-3 my-4"
+                                href="{{ route('clients.edit', $client->id) }}">Edit</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -967,6 +967,20 @@ button[type="submit"].deactive {
     letter-spacing: 0.5px;
     font-size: 1.35rem;
 }
+.tns-controls button {
+    background-color: var(--yellow-2);
+    border: 1.5px solid var(--yellow-2);
+    border-radius: 0.5rem;
+    color: #f5f5f5;
+    padding: 0.1rem 1rem;
+    margin: 0.5rem 0.5rem 1rem 0;
+    font-size: 2.4rem;
+    transition: 500ms;
+    font-weight: 500;
+}
+.tns-controls button:hover {
+    transform: scale(0.98);
+}
 /* ====== Testimonials Ends ======*/
 /* ====== Footer ====== */
 #footer {
@@ -1330,6 +1344,9 @@ button[type="submit"].deactive {
     box-shadow: var(--shadow);
     border-radius: 0.5rem;
 }
+#clients a {
+    font-size: 1.5rem;
+}
 #clients .clients h3 {
     font-size: 2rem;
     font-weight: bold;
@@ -1394,4 +1411,87 @@ button[type="submit"].deactive {
 }
 #clients .clients button:hover {
     transform: scale(0.98);
+}
+/* Admin Panel  */
+#admin {
+    background: #22252a;
+    /* height: 80rem; */
+    padding-bottom: 25rem;
+}
+#admin .navbar {
+    background: #2d3035;
+}
+#admin .box {
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    background: #f5f5f5;
+    padding: 10px 10px 5px 10px;
+}
+#admin .box img {
+    pointer-events: none;
+    height: 30px;
+    width: 30px;
+}
+#admin .navbar .nav-link {
+    font-size: 1.4rem;
+}
+#admin .box h3 {
+    font-weight: bold;
+    background-color: var(--yellow-2);
+    font-size: 1.65rem;
+    color: #ffffff;
+    padding: 3px;
+    border-radius: 5px;
+}
+#admin .box p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+#admin .project {
+    background: #f5f5f5;
+    padding: 1rem;
+}
+#admin .project .card-body li {
+    font-size: 1.6rem;
+    color: #212121;
+}
+#admin .project .card-header {
+    color: var(--yellow-2);
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+#admin td,
+#admin th {
+    font-size: 1.4rem;
+}
+#admin td img {
+    height: 20px;
+    width: 20px;
+}
+#admin .project form p {
+    color: #212121;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+#admin .project form input,
+#admin .project form textarea {
+    padding: 0.3rem 0.5rem;
+    font-size: 1.3rem;
+    color: #212121;
+}
+#admin .project form input[type="text"],
+#admin .project form textarea {
+    border: 1px solid var(--yellow-1);
+    outline: 1px solid var(--yellow-1);
+}
+#admin .project form label {
+    font-size: 1.4rem;
+}
+#admin .project form button {
+    padding: 0.3rem 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: 500ms;
+}
+#admin .project form button:hover {
+    transform: scale(0.95);
 }

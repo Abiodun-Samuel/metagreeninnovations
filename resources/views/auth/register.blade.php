@@ -2,16 +2,16 @@
 
 @section('auth')
     <section class="auth">
-        <div class="container mb-3">
-            <div class="row justify-content-center mt-4">
-                <div class="col-lg-5 my-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
                     <div class="auth-card">
-                        <img class="img-fluid mx-auto mb-4" src="{{ url('/images/logo.jpg') }}"
+                        <img class="img-fluid mx-auto mb-3" src="{{ url('/images/logo.jpg') }}"
                             alt="Metagreen Innovations Logo" title="Metagreen Innovations Logo">
 
                         <h3>Register</h3>
 
-                        <form class="mt-4" method="POST" action="{{ route('register') }}">
+                        <form class="mt-1" method="POST" action="{{ route('register') }}">
                             @csrf
 
                             @if ($errors->any())

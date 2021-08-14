@@ -28,38 +28,24 @@
                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
                         </ol>
                         <div class="carousel-inner anim-img">
                             <div class="carousel-item active">
-                                <img loading="lazy"
-                                    src="{{ url('/images/projects/Buena Vista Estate Project 1/image1.jpg') }}"
+                                <img loading="lazy" src="{{ url('/images/main_hero.jpg') }}"
                                     class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
                                     width="500">
                             </div>
-                            <div class="carousel-item ">
-                                <img loading="lazy"
-                                    src="{{ url('/images/projects/Buena Vista Estate Project 1/image2.jpg') }}"
-                                    class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
-                                    width="500">
-                            </div>
-                            <div class="carousel-item ">
-                                <img loading="lazy"
-                                    src="{{ url('/images/projects/Buena Vista Estate Project 1/image3.jpg') }}"
-                                    class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
-                                    width="500">
-                            </div>
-                            <div class="carousel-item ">
-                                <img loading="lazy"
-                                    src="{{ url('/images/projects/Buena Vista Estate Project 1/image4.jpg') }}"
-                                    class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
-                                    width="500">
-                            </div>
-                            <div class="carousel-item ">
-                                <img loading="lazy"
-                                    src="{{ url('/images/projects/Buena Vista Estate Project 1/image4.jpg') }}"
-                                    class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
-                                    width="500">
-                            </div>
+
+                            @foreach ($project_img as $img)
+                                <div class="carousel-item">
+                                    <img loading="lazy" src="{{ url('storage/images/projects/' . $img->image_main) }}"
+                                        class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
+                                        width="500">
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -230,15 +216,40 @@
             </div>
 
             <div class="row">
-                <x-project aos="0" folder="Oral Estate Project" description="5KVA Complete Solar System at Oral Estate"
-                    image="image2" />
-                <x-project aos="50" folder="Buena Vista Estate Project 1"
-                    description="20KVA Complete Solar System at Buena Vista Estate (Project 1)." image="image4" />
-                <x-project aos="100" folder="Lekki County Homes Project"
-                    description="5KVA Complete System at Lekki County Homes." image="image2" />
+                @foreach ($projects as $project)
+                    <div class="col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch my-4" data-aos="fade-up">
+                        <div class="card">
+                            <div class="card-pix">
+                                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img loading="lazy"
+                                                src="{{ url('storage/images/projects/' . $project->image_main) }}"
+                                                class="img-fluid bg-secondary" alt="our project" title="Our Projects"
+                                                height="350" width="500">
+                                        </div>
+                                        @foreach (json_decode($project->images) as $img)
+                                            <div class="carousel-item">
+                                                <img loading="lazy" src="{{ url('storage/images/projects/' . $img) }}"
+                                                    class="img-fluid bg-secondary" alt="our project" title="Our Projects"
+                                                    height="350" width="500">
+                                            </div>
+                                        @endforeach
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">{{ $project->title }}</h3>
+                                <p class="card-text"> {{ $project->sub_title }} </p>
+                                <a href="{{ route('admin.show', $project->slug) }}"> Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
 
-            <div class="my-5">
+            <div class="my-4">
                 <a href="{{ url('/Projects') }}" class="mybtn yellow-1">View More</a>
             </div>
 
@@ -325,7 +336,7 @@
                 <div class="col-lg-12">
                     <div class="my-slider">
                         @foreach ($clients as $client)
-                            <div class="card p-5">
+                            <div class="card p-5 mr-4">
                                 <img class="img-fluid" src="{{ url('storage/images/testimonials/' . $client->image) }}"
                                     alt="{{ $client->name }}" title="{{ $client->name }}">
 
@@ -440,16 +451,20 @@
             container: '.my-slider',
             slideBy: 'page',
             autoplay: false,
+            nav: false,
+            mouseDrag: true,
+            controlsText: ['&#9754;', '&#9755;'],
             responsive: {
                 640: {
-                    items: 2
+                    items: 1,
                 },
                 900: {
+                    items: 2
+                },
+                1200: {
                     items: 3
                 }
             }
-
         });
     </script>
-
 @endpush

@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Mail\NotificationMail;
+use Illuminate\Support\Facades\Mail;
+use Newsletter;
 use App\Mail\SendMail;
 use Illuminate\Http\Request;
-use Mail;
-use Newsletter;
-use Redirect;
+use App\Mail\NotificationMail;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 class FormController extends Controller
 {

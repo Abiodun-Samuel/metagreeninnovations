@@ -1,35 +1,45 @@
 @extends('layouts.app')
 
 @section('content')
-
     <x-header pageheader="{{ $innertitle }}" subpageheader=""
         pagedescription="Take a look at our recently completed projects executed with a touch of excellence and professionalism." />
 
     <div class="projects my-5">
         <div class="container">
             <div class="row">
-                <x-project aos="0" folder="Oral Estate Project" description="5KVA Complete Solar System at Oral Estate."
-                    image="image2" />
+                @foreach ($projects as $project)
+                    <div class="col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch my-4" data-aos="fade-up">
+                        <div class="card">
+                            <div class="card-pix">
+                                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img loading="lazy"
+                                                src="{{ url('storage/images/projects/' . $project->image_main) }}"
+                                                class="img-fluid bg-secondary" alt="our project" title="Our Projects"
+                                                height="350" width="500">
+                                        </div>
+                                        @foreach (json_decode($project->images) as $img)
+                                            <div class="carousel-item">
+                                                <img loading="lazy" src="{{ url('storage/images/projects/' . $img) }}"
+                                                    class="img-fluid bg-secondary" alt="our project" title="Our Projects"
+                                                    height="350" width="500">
+                                            </div>
+                                        @endforeach
+                                    </div>
 
-                <x-project aos="50" folder="Buena Vista Estate Project 1"
-                    description="20KVA Complete Solar System at Buena Vista Estate (Project 1)." image="image3" />
+                                </div>
+                            </div>
 
-                <x-project aos="100" folder="Lekki County Homes Project"
-                    description="5KVA Complete System at Lekki County Homes." image="image3" />
-
-                <x-project aos="150" folder="Buena Vista Estate Project 2"
-                    description="20KVA Complete Solar System at Buena Vista Estate (Project 2)." image="image1" />
-
-                <x-project aos="200" folder="Olusegun Obasanjo Hilltop Project"
-                    description="5KVA Inverter System at Olusegun Obasanjo Hilltop." image="image2" />
-
-                <x-project aos="250" folder="Olomore Housing Estate Project"
-                    description="5 KVA Complete Solar System at Olomore Housing Estate." image="image1" />
-
-                <x-project aos="300" folder="Patheon Smart Terrace Project"
-                    description="15KVA Complete Solar System at Patheon Smart Terrace Estate." image="image1" />
+                            <div class="card-body">
+                                <h3 class="card-title">{{ $project->title }}</h3>
+                                <p class="card-text"> {{ $project->sub_title }} </p>
+                                <a href="{{ route('admin.show', $project->slug) }}"> Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-
         </div>
     </div>
 

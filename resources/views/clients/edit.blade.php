@@ -48,10 +48,8 @@
                                 src="{{ url('images/logo.jpg') }}" alt="Metagreen Innovations"
                                 title="Metagreen Innovations" height="50" width="181"></a>
 
-                        <h3>Thank You For Patronizing Us!</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti accusamus sapiente minus
-                            explicabo nulla iusto, inventore sunt dolore repudiandae aperiam necessitatibus consequuntur
-                            tempore facilis iure sequi in eveniet maiores, omnis atque fugiat </p>
+                        <h3>Edit </h3>
+                        <p class="p-0 m-0">{{ $client->name }}'s Testimonials</p>
 
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -67,18 +65,19 @@
                             </div>
                         @endif
 
-                        <form class="mt-4" action="{{ route('clients.store') }}" method="post"
+                        <form class="mt-4" action="{{ route('clients.update', $client->id) }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
 
                             <label for="name">Name*</label>
-                            <input type="text" name="name" value="{{ old('name') }}" id="name">
+                            <input type="text" name="name" value="{{ $client->name }}" id="name">
 
                             <label for="comment">Comments*</label>
-                            <textarea name="comments" id="comments" rows="3">{{ old('comments') }}</textarea>
+                            <textarea name="comments" id="comments" rows="3">{{ $client->comments }}</textarea>
 
                             <label for="address">Address(State & City)*</label>
-                            <input type="text" name="address" value="{{ old('address') }}" id="address">
+                            <input type="text" name="address" value="{{ $client->address }}" id="address">
 
                             <label for="image">Upload your picture* </label> <br>
                             <input type="file" name="image" id="image"><br>
