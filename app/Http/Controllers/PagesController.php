@@ -13,8 +13,8 @@ class PagesController extends Controller
     {
         $services = Service::get(['id', 'aos', 'title', 'description']);
         $clients = Client::with('user')->get();
-        $projects = Project::with('user')->paginate(3);
-        $project_img = Project::with('user')->get();
+        $projects = Project::with('user')->inRandomOrder()->paginate(3);
+        $project_img = Project::with('user')->paginate(6);
         $metatitle = "Home | Welcome to Metagreen Innovations";
         return view('index', compact('metatitle', 'services', 'clients', 'projects', 'project_img'));
     }

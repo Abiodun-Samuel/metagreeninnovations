@@ -32,8 +32,9 @@
                             </div>
 
                             <div class="card-body">
-                                <h3 class="card-title">{{ $project->title }}</h3>
-                                <p class="card-text"> {{ $project->sub_title }} </p>
+                                <h3 class="card-title mb-1">{{ $project->title }}</h3>
+                                <span class="pb-3"> Posted {{ $project->updated_at->diffForHumans() }} </span>
+                                <p class="card-text my-2"> {{ $project->sub_title }} </p>
                                 <a href="{{ route('admin.show', $project->slug) }}"> Read More</a>
                             </div>
                         </div>

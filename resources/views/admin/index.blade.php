@@ -400,9 +400,6 @@
             $("body").on("click", ".del_component", function() {
                 $(this).parents(".compo").remove();
             });
-
-
-
         });
     </script>
 

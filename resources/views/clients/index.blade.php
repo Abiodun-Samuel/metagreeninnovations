@@ -49,9 +49,12 @@
                                 title="Metagreen Innovations" height="50" width="181"></a>
 
                         <h3>Thank You For Patronizing Us!</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti accusamus sapiente minus
-                            explicabo nulla iusto, inventore sunt dolore repudiandae aperiam necessitatibus consequuntur
-                            tempore facilis iure sequi in eveniet maiores, omnis atque fugiat </p>
+                        <p>Your feedback is very important to us and as you're probably well-aware, satisfied customers
+                            are vital to the success of any business.
+                            Also, we are always excited to share customer feedback on our website. If you are happy with
+                            the work we completed for you, we would love to tell others about your experience! Would you
+                            consider leaving a testimonial for us?
+                            In just a few sentences describe your experience with us. Thanks </p>
 
                         @if ($errors->any())
                             <div class="alert alert-danger">

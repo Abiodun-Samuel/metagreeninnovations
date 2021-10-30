@@ -44,6 +44,7 @@ class AdminController extends Controller
 
                 // save image
                 $image_resize->save(storage_path('app/public/images/projects/' . $filename, 100));
+                // $image_resize->save('storage/images/projects/' . $filename, 100);
                 $data[] = $filename;
             }
         }
@@ -123,6 +124,7 @@ class AdminController extends Controller
                 });
                 // // save image
                 $image_resize->save(storage_path('app/public/images/projects/' . $filename, 100));
+                // $image_resize->save('storage/images/projects/' . $filename, 100);
                 $data[] = $filename;
                 // save to database
                 Project::where('slug', $slug)->update([

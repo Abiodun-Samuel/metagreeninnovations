@@ -33,6 +33,7 @@ class ClientController extends Controller
         });
         // save image
         $image_resize->save(storage_path('app/public/images/testimonials/' . $filename, 100));
+        // $image_resize->save('storage/images/testimonials/' . $filename, 100);
 
         // save to database
         $clients = Client::create([
@@ -88,6 +89,8 @@ class ClientController extends Controller
             });
             // save image
             $image_resize->save(storage_path('app/public/images/testimonials/' . $filename, 100));
+            // $image_resize->save('storage/images/testimonials/' . $filename, 100);
+
 
             // save to database
             Client::where('id', $id)->update([
