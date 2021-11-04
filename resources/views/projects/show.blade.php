@@ -42,7 +42,8 @@
                         @for ($i = 0; $i < count($images); $i++)
                             <a class="venobox" data-gall="gallery01"
                                 href="{{ url('storage/images/projects/' . $images[$i]) }}">
-                                <img loading="lazy" width="500" height="350" class="img-fluid bg-secondary" src="{{ url('storage/images/projects/' . $images[$i]) }}">
+                                <img loading="lazy" class="img-fluid bg-secondary"
+                                    src="{{ url('storage/images/projects/' . $images[$i]) }}">
                             </a>
                         @endfor
 

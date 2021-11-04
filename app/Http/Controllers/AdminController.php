@@ -150,8 +150,6 @@ class AdminController extends Controller
             ]);
         }
 
-
-
         return redirect()->route('admin.home')->with('status', 'Your project has been edited successfully');
     }
 
