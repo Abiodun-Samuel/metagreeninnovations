@@ -47,6 +47,7 @@ class FormController extends Controller
         $user = $data['name'];
         $user_mail = $data['email'];
         $to = "contact@metagreeninnovations.com";
+        
 
         try {
             Mail::to($to)->send(new SendMail($data));

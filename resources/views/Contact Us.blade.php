@@ -61,8 +61,8 @@
 
                             <div class="form-group col-md-6">
                                 <label for="phone">Your Phone *</label>
-                                <input type="tel" class="form-control" value="{{ old('phone') }}" name="phone" id="phone"
-                                    required />
+                                <input type="tel" class="form-control" value="{{ old('phone') }}" name="phone"
+                                    id="phone" required />
                             </div>
                         </div>
 
@@ -72,7 +72,7 @@
                                 required></textarea>
                         </div>
 
-                        <div class="form-group col-lg-12 my-3">
+                        <div class="form-group col-lg-12 my-3 sam">
                             <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.key') }}">
                             </div>
                         </div>
