@@ -3,8 +3,7 @@
 @section('content')
 
     <x-header pageheader="{{ $innertitle }}" subpageheader=""
-        pagedescription="We'd love to hear about your project and help you get started, Let's talk about how we can help you
-                                                                                                                                achieve your goals." />
+        pagedescription="We'd love to hear about your project and help you get started, Let's talk about how we can help you achieve your goals." />
 
     <div class="contact">
         <div class="container">

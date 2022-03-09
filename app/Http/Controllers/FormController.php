@@ -48,14 +48,13 @@ class FormController extends Controller
         $user_mail = $data['email'];
         $to = "contact@metagreeninnovations.com";
 
-        try {Mail::to($to)->send(new SendMail($data));
+        try {
+            Mail::to($to)->send(new SendMail($data));
             Mail::to($user_mail)->send(new NotificationMail($data));
             return view('thanks', compact('user', 'metatitle', 'message'));
-
-        } catch (\Swift_TransportException$exception) {
+        } catch (\Swift_TransportException $exception) {
             return Redirect::to('/Contact Us')->with('error', 'Error! Messsage not sent. Please try again.');
         };
-
     }
     public function subscribe(Request $request)
     {
