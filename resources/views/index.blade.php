@@ -3,7 +3,39 @@
 @section('content')
     {{-- ====== Hero ===== --}}
     <div id="hero">
-        <div class="container">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                {{-- <li data-target="#carouselExampleIndicators" data-slide-to="3"></li> --}}
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item carousel-one active">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 col-md-8 text-center">
+                            <h1>
+                                <span>Safe</span> Energy Solutions for <br>
+                                <span id="typed"></span>
+                            </h1>
+                            <p class="hero-text">
+                                We provide quality solar energy systems at affordable price. We take care
+                                of the design, supply and installation. Do you wish to cut down the cost of your electricity
+                                bills?
+                            </p>
+                            <div class="hero-btn">
+                                <a href="{{ url('#start') }}" class="mybtn">Get Started</a>
+                                <a href="{{ route('contact') }}" class="mybtn mx-5"> Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <span>Steady</span> & <span>Sustainable</span> --}}
+                    {{-- <img loading="lazy" src="{{ url('/images/hero/hero1.jpg') }}" class="img-fluid bg-secondary"
+                        alt="our project" title="Our Projects"> --}}
+                </div>
+            </div>
+        </div>
+        {{-- <div class="container">
             <div class="row">
                 <div class="col-lg-6 hero-text-box">
                     <h1 class="hero-header">
@@ -16,41 +48,13 @@
                     </p>
                     <div class="hero-btn anim">
                         <a href="{{ url('#start') }}" class="mybtn">Get Started</a>
-                        <a href="{{ url('/Contact Us') }}" class="mybtn mx-5"> Contact</a>
+                        <a href="{{ route('contact') }}" class="mybtn mx-5"> Contact</a>
                     </div>
                 </div>
-
-                <div class="col-lg-6 hero-img-box">
-                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-                        </ol>
-                        <div class="carousel-inner anim-img">
-                            <div class="carousel-item active">
-                                <img loading="lazy" src="{{ url('/images/main_hero.jpg') }}"
-                                    class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
-                                    width="500">
-                            </div>
-
-                            @foreach ($project_img as $img)
-                                <div class="carousel-item">
-                                    <img loading="lazy" src="{{ url('storage/images/projects/' . $img->image_main) }}"
-                                        class="img-fluid bg-secondary" alt="our project" title="Our Projects" height="350"
-                                        width="500">
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
+                <div class="col-lg-12 hero-img-box">
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     {{-- ===== Hero Ends ===== --}}
 
@@ -107,7 +111,8 @@
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch my-3" data-aos="fade-up" data-aos-delay="50">
                     <div class="icon-box ">
-                        <div class="icon my-1"><img loading="lazy" src="{{ url('/images/vision.svg') }}" alt="Our vision">
+                        <div class="icon my-1"><img loading="lazy" src="{{ url('/images/vision.svg') }}"
+                                alt="Our vision">
                         </div>
                         <h4>Our Vision</h4>
                         <p>We are fully committed to providing every Nigerian a ready access to innovative,
@@ -258,9 +263,19 @@
     </section>
     <!-- ===== Projects Ends ===== -->
 
-    <x-cta
-        cta="If you'd like to know more about our services or you have any inquiries, click the button to contact us. We'd love to hear from you!"
-        page="Contact Us" />
+    <div class="cta py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-8 col-sm-6 my-3">
+                    <h3> If you'd like to know more about our services or you have any inquiries, click the button to
+                        contact us. We'd love to hear from you! </h3>
+                </div>
+                <div class=" col-lg-3 col-md-4 col-sm-6 my-3">
+                    <button><a class="" href="{{ route('contact') }}"> Contact Us</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     {{-- Get Started --}}
     <section id="start">
@@ -338,7 +353,8 @@
                     <div class="my-slider">
                         @foreach ($clients as $client)
                             <div class="card p-5 mr-4">
-                                <img class="img-fluid" src="{{ url('storage/images/testimonials/' . $client->image) }}"
+                                <img class="img-fluid"
+                                    src="{{ url('storage/images/testimonials/' . $client->image) }}"
                                     alt="{{ $client->name }}" title="{{ $client->name }}">
 
                                 <h3>{{ $client->name }}</h3>
@@ -390,7 +406,6 @@
         </div>
     </section>
     {{-- ==== Partners ===== --}}
-
 @endsection
 
 @push('styles')

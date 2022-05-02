@@ -35,12 +35,12 @@ Route::post('/client/post_testimonial', [ClientController::class, 'store'])->nam
 
 // Webpages
 Route::get('/', [PagesController::class, 'index'])->name('home');
-Route::get('/About Us', [PagesController::class, 'about'])->name('about');
-Route::get('/Projects', [PagesController::class, 'project'])->name('projects');
-Route::get('/Services', [PagesController::class, 'service']);
+Route::get('/about-us', [PagesController::class, 'about'])->name('about');
+Route::get('/projects', [PagesController::class, 'project'])->name('projects');
+Route::get('/services', [PagesController::class, 'service'])->name('services');
 
 // Contact and Send mail
-Route::get('/Contact Us', [FormController::class, 'contact']);
+Route::get('/contact', [FormController::class, 'contact'])->name('contact');
 Route::post('/contact/sendmail', [FormController::class, 'sendmail'])->name('sendmail');
 Route::post('/subscribe', [FormController::class, 'subscribe'])->name('subscribe');
 

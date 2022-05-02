@@ -25,12 +25,12 @@
 
     {{-- ========== CSS Libraries ========== --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url('/css/app.css?ver=1.01') }}">
+    <link rel="stylesheet" href="{{ url('/css/app.css?ver=1.03') }}">
     @stack('styles')
 
     {{-- ========== Custom CSS  ========== --}}
-    <link rel="stylesheet" href="{{ url('style.css?ver=1.2') }}" />
-    {{-- <link rel="stylesheet" href="{{ url('/css/style.css?ver=1.0') }}" /> --}}
+    {{-- <link rel="stylesheet" href="{{ url('style.css?ver=1.3') }}" /> --}}
+    <link rel="stylesheet" href="{{ url('/css/style.css?ver=1.1') }}" />
 
 </head>
 
@@ -58,11 +58,11 @@
                 {{-- Nav Links --}}
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ml-auto">
-                        <a class="nav-link active" href="{{ url('/') }}"> HOME </a>
-                        <a class="nav-link" href="{{ url('/About Us') }}"> ABOUT </a>
-                        <a class="nav-link" href="{{ url('/Services') }}"> SERVICES </a>
-                        <a class="nav-link" href="{{ url('/Projects') }}"> PROJECTS </a>
-                        <a class="nav-link" href="{{ url('/Contact Us') }}"> CONTACT </a>
+                        <a class="nav-link active" href="{{ route('home') }}"> HOME </a>
+                        <a class="nav-link" href="{{ route('about') }}"> ABOUT </a>
+                        <a class="nav-link" href="{{ route('services') }}"> SERVICES </a>
+                        <a class="nav-link" href="{{ route('projects') }}"> PROJECTS </a>
+                        <a class="nav-link" href="{{ route('contact') }}"> CONTACT </a>
                         @auth
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf
@@ -114,11 +114,11 @@
                     <div class="col-lg-4 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li><a href=" {{ url('/About Us') }}">About Us</a></li>
-                            <li><a href="{{ url('/Services') }}">Services</a></li>
-                            <li><a href="{{ url('/Projects') }}">Projects</a></li>
-                            <li><a href="{{ url('/Contact Us') }}">Contact Us</a></li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href=" {{ route('about') }}">About Us</a></li>
+                            <li><a href="{{ route('services') }}">Services</a></li>
+                            <li><a href="{{ route('projects') }}">Projects</a></li>
+                            <li><a href="{{ route('contact') }}">Contact Us</a></li>
                         </ul>
                     </div>
 
@@ -177,7 +177,7 @@
             </div>
             <div class="credits">
                 Designed & Developed by <strong>
-                    <a href="https://wa.link/aqutc1"> <strong>Abiodun Digital Hub</strong> </a>
+                    <a href="https://abiodunsamuel.com" target="_blanck"> <strong>Abiodun Digital Hub</strong> </a>
                 </strong>
             </div>
         </div>
