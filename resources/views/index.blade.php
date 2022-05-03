@@ -159,8 +159,8 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="why-box" data-aos="fade-right">
-                        <img loading="lazy" title="solar Panel" class="img-fluid"
-                            src="{{ url('/images/solar.jpg') }}" alt="importance of solar">
+                        <img loading="lazy" title="solar Panel" class="img-fluid" src="{{ url('/images/why.jpg') }}"
+                            alt="importance of solar">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
