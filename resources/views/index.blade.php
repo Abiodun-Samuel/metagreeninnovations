@@ -290,24 +290,21 @@
                     </div>
                 @endforeach
             </div>
-
             <div class="my-4">
-                <a href="{{ url('/Projects') }}" class="mybtn yellow-1">View More</a>
+                <a href="{{ route('projects') }}" class="mybtn yellow-1">View More</a>
             </div>
-
         </div>
     </section>
     <!-- ===== Projects Ends ===== -->
 
     <div class="cta">
         <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-4 col-md-6 my-2">
-                    <img src={{ asset('/images/contact.jpg') }} alt="contact us" class="img-fluid" loading="lazy"
-                        height="400">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 my-2 text-center">
+                    <img src={{ asset('/images/contact.jpg') }} alt="contact us" class="img-fluid" loading="lazy">
                 </div>
                 <div class="col-lg-6 col-md-6 my-2">
-                    <div class="d-flex justify-content-center align-items-center" style="height:400px;">
+                    <div class="d-flex justify-content-center align-items-center pt-5">
                         <div class="shadow-lg cta-text p-5 rounded">
                             <p class="mb-5"> If you'd like to know more about our services or you have any
                                 inquiries,
@@ -384,38 +381,8 @@
     </section>
     {{-- Get Started --}}
 
-    {{-- ==== Testimonials ===== --}}
-    <section class="testimonials">
-        <div class="container">
-            <div class="header">
-                <h2>Customer Testimonials</h2>
-                <p>Read what our valued customers have to say about us.</p>
-            </div>
-
-            <div class="row" data-aos="fade-up">
-                <div class="col-lg-12">
-                    <div class="my-slider">
-                        @foreach ($clients as $client)
-                            <div class="card p-5 mr-4">
-                                <img class="img-fluid"
-                                    src="{{ url('storage/images/testimonials/' . $client->image) }}"
-                                    alt="{{ $client->name }}" title="{{ $client->name }}">
-
-                                <h3>{{ $client->name }}</h3>
-                                <span>({{ $client->address }})</span> <br>
-                                <span class="pb-3"> Posted {{ $client->updated_at->diffForHumans() }} </span>
-                                <p>&#34;{{ $client->comments }}&#34;</p>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- ===== Testimonials Ends ===== --}}
-
     {{-- ==== Partners ===== --}}
-    <section>
+    <section id="patner">
         <div class="container">
             <div class="header">
                 <h2> Our Partners</h2>
@@ -450,6 +417,36 @@
         </div>
     </section>
     {{-- ==== Partners ===== --}}
+
+    {{-- ==== Testimonials ===== --}}
+    <section class="testimonials">
+        <div class="container">
+            <div class="header">
+                <h2>Customer Testimonials</h2>
+                <p>Read what our valued customers have to say about us.</p>
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-10">
+                    <div class="my-slider">
+                        @foreach ($clients as $key => $client)
+                            <div class="card shadow rounded p-4 m-4 border-0" data-aos="fade-up"
+                                data-aos-delay="{{ $key * 100 }}">
+                                <img class="img-fluid"
+                                    src="{{ url('storage/images/testimonials/' . $client->image) }}"
+                                    alt="{{ $client->name }}" title="{{ $client->name }}">
+                                <h3>{{ $client->name }}</h3>
+                                <span>({{ $client->address }})</span> <br>
+                                <span class="pb-3"> Posted {{ $client->updated_at->diffForHumans() }} </span>
+                                <p>&#34;{{ $client->comments }}&#34;</p>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- ===== Testimonials Ends ===== --}}
 @endsection
 
 @push('styles')

@@ -44,6 +44,22 @@
         </div>
     </div>
 
-    <x-cta cta="You can also enjoy this too. Take the first step towards safe and steady electricity." page="Contact Us" />
-
+    <div class="cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 my-2 text-center">
+                    <img src={{ asset('/images/contact.jpg') }} alt="contact us" class="img-fluid" loading="lazy">
+                </div>
+                <div class="col-lg-6 col-md-6 my-2">
+                    <div class="d-flex justify-content-center align-items-center pt-5">
+                        <div class="shadow-lg cta-text p-5 rounded">
+                            <p class="mb-5"> You can also enjoy this too. Take the first step towards safe and
+                                steady electricity.</p>
+                            <a class="cta_btn" href="{{ route('contact') }}"> Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

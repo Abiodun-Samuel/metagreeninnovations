@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <x-header pageheader="{{ $innertitle }}" subpageheader="" pagedescription="" />
 
     <div class="aboutpage my-5">
@@ -64,7 +63,24 @@
         </div>
     </div>
 
-    <x-cta cta="We have wide range of services to suit your projects, Check them out!" page="Services" />
+    <div class="cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 my-2 text-center">
+                    <img src={{ asset('/images/contact.jpg') }} alt="contact us" class="img-fluid" loading="lazy">
+                </div>
+                <div class="col-lg-6 col-md-6 my-2">
+                    <div class="d-flex justify-content-center align-items-center pt-5">
+                        <div class="shadow-lg cta-text p-5 rounded">
+                            <p class="mb-5"> We have wide range of services to suit your projects. Contact us now
+                            </p>
+                            <a class="cta_btn" href="{{ route('contact') }}"> Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="team my-3">
         <div class="container">
@@ -103,7 +119,8 @@
                         <div class="card-body">
                             <h4 class="card-title">Adegoke Seun John</h4>
                             <span>(Lead Engineer)</span>
-                            <p class="card-text"> Mr. Adegoke has over 5years experience in the industry. He is the Lead
+                            <p class="card-text"> Mr. Adegoke has over 5years experience in the industry. He is the
+                                Lead
                                 Engineer at Metagreen Innovations(Electrical and Solar).</p>
                         </div>
                     </div>
@@ -130,13 +147,14 @@
                     data-aos-delay="150">
                     <div class="card">
                         <div class="card-pix">
-                            <img loading="lazy" src="{{ url('images/team/oladeinde.jpg') }}" class="img-fluid bg-secondary"
-                                alt="team member" width="150" height="150">
+                            <img loading="lazy" src="{{ url('images/team/oladeinde.jpg') }}"
+                                class="img-fluid bg-secondary" alt="team member" width="150" height="150">
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Oladeinde Jamiu</h4>
                             <span>(Technical Support)</span>
-                            <p class="card-text">Mr. Oladeinde is an Eletrical Engineer with almost a decade experience. He
+                            <p class="card-text">Mr. Oladeinde is an Eletrical Engineer with almost a decade
+                                experience. He
                                 is our Technical Support.</p>
                         </div>
                     </div>
@@ -145,5 +163,4 @@
             </div>
         </div>
     </div>
-
 @endsection

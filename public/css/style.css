@@ -703,13 +703,12 @@ header .navbar .nav-link:hover:before {
 /* ========== Projects Ends ========== */
 
 /* Get started */
-/* #start {
-    background: url("../images/start.svg") no-repeat;
-    background-size: cover;
-} */
+
 #start .startbox {
     box-shadow: var(--shadow-1);
-    background-color:#ffffff;
+    background: url("../images/backgrounds/about.svg") no-repeat;
+    background-size: cover;
+    background-position: center;
     border-radius: 5px;
 }
 
@@ -737,6 +736,13 @@ header .navbar .nav-link:hover:before {
     max-width: 20%;
     margin: 1rem auto;
 }
+
+
+/* our patners  */
+#patner{
+    background: var(--yellow-0);
+}
+
 
 /* ========= Contact Page ========== */
 .contact .info {
@@ -839,29 +845,13 @@ button[type="submit"].deactive {
 /* ========== Contact Page Ends========== */
 
 /* ======= Testimonials ======= */
-@media screen and (min-width: 1000px) {
-    .testimonials {
-        background: url("../images/service-lg.jpg") no-repeat,
-            rgba(0, 0, 0, 0.85);
-        background-blend-mode: overlay;
-        background-position: center;
-        background-size: cover;
-    }
+
+.testimonials .header h2 {
+    color: var(--yellow-2);
 }
 
-@media screen and (max-width: 999px) {
-    .testimonials {
-        background: url("../images/service-md.jpg") no-repeat,
-            rgba(0, 0, 0, 0.85);
-        background-blend-mode: overlay;
-        background-position: center;
-        background-size: cover;
-    }
-}
-
-.testimonials .header h2,
 .testimonials .header p {
-    color: #f5f5f5;
+    color: var(--grey-2);
 }
 
 .testimonials img {
@@ -869,20 +859,24 @@ button[type="submit"].deactive {
     margin: 1rem auto;
 }
 
-.testimonials .carousel-item {
-    padding: 2rem;
-}
-
-.testimonials .carousel-item h5 {
+.testimonials .card h3 {
     font-size: 1.6rem;
-    color: #f8f9fa;
+    color: var(--yellow-2);
+    margin: 0.3rem 0;
 }
 
-.testimonials .carousel-item p {
-    max-width: 85%;
-    margin: 1.5rem auto;
-    font-size: 1.4rem;
-    color: var(--light-0);
+.testimonials .card span {
+    font-size: 1.3rem;
+    color: var(--grey-1);
+}
+
+.testimonials .card p {
+    /* margin: 1.5rem 0; */
+    font-size: 1.3rem;
+    color: var(--grey-2);
+}
+.testimonials .card{
+    background: url('../images/backgrounds/why-me.svg') !important;
 }
 
 /* ====== Testimonials Ends ======*/
@@ -1041,26 +1035,11 @@ button[type="submit"].deactive {
 /* ===== Cta ===== */
 .cta{
     position: relative;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-/* .cta-box{
-    background: url("../images/contact.jpg") no-repeat;
-    background-size: contain;
-    background-position: 0 0;
-    height: 500px;
-} */
 .cta-text{
-    /* position: absolute;
-    top: 35%;
-    left: 40%;
-    z-index: 10; */
     background: url("../images/backgrounds/about.svg") no-repeat;
     background-size: cover;
     background-position: center;
-    /* max-width:500px; */
     color: #242424;
 }
 
