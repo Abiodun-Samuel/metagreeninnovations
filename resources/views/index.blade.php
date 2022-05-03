@@ -302,16 +302,21 @@
     <div class="cta">
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="col-lg-10">
-                    <img src={{ asset('/images/contact.jpg') }} alt="contact us" class="img-fluid" loading="lazy">
-                    <div class="shadow cta-text p-5 rounded">
-                        <p class="mb-5"> If you'd like to know more about our services or you have any inquiries,
-                            click the button to
-                            contact us. We'd love to hear from you! </p>
-                        <a class="cta_btn" href="{{ route('contact') }}"> Contact Us</a>
+                <div class="col-lg-4 col-md-6 my-2">
+                    <img src={{ asset('/images/contact.jpg') }} alt="contact us" class="img-fluid" loading="lazy"
+                        height="400">
+                </div>
+                <div class="col-lg-6 col-md-6 my-2">
+                    <div class="d-flex justify-content-center align-items-center" style="height:400px;">
+                        <div class="shadow-lg cta-text p-5 rounded">
+                            <p class="mb-5"> If you'd like to know more about our services or you have any
+                                inquiries,
+                                click the button to
+                                contact us. We'd love to hear from you! </p>
+                            <a class="cta_btn" href="{{ route('contact') }}"> Contact Us</a>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
