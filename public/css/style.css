@@ -94,13 +94,15 @@ section .header h2 {
     font-size: 2.5rem;
     font-weight: bold;
     padding: 1.5rem 0;
-    color: #212121;
+    color: var(--yellow-2);
+    text-align: center;
     text-transform: uppercase;
 }
 
 section .header p {
     font-size: 1.65rem;
     margin: 1rem 0;
+    text-align: center;
     padding: 0.5rem 0;
     color: var(--grey-2);
 }
@@ -128,8 +130,9 @@ footer {
 }
 
 .mybtn.yellow-1 {
-    background: #f5f5f5;
-    color: var(--yellow-2);
+    background: var(--yellow-2);
+    color:#ffffff;
+    border-radius: 10px;
     border: 1.5px solid var(--yellow-2);
 }
 
@@ -145,12 +148,7 @@ footer {
 }
 
 .mybtn.yellow-1:hover {
-    background: var(--yellow-2);
-    color: #f5f5f5;
-}
-
-.mybtn.yellow-1:hover {
-    background: var(--yellow-2);
+    background: var(--yellow-1);
     color: #f5f5f5;
 }
 
@@ -301,7 +299,7 @@ header .navbar .nav-link:hover:before {
     color: var(--light-0);
 }
 
-.carousel-item{
+#hero .carousel-item{
     min-height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -318,14 +316,14 @@ header .navbar .nav-link:hover:before {
     background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.65)),url('../images/hero/hero3.jpg');
 }
 
-ol.carousel-indicators li,
-ol.carousel-indicators li.active {
+#hero ol.carousel-indicators li,
+#hero ol.carousel-indicators li.active {
     width: 1.5rem;
     border-radius: 0;
     border: 0;
 }
 
-ol.carousel-indicators li.active {
+#hero ol.carousel-indicators li.active {
     background-color: var(--yellow-2);
 }
 
@@ -494,68 +492,50 @@ ol.carousel-indicators li.active {
     position: relative;
 }
 
-#why-solar h2 {
-    font-size: 2.4rem;
-    font-weight: bold;
-}
-
 #why-solar .why-box img {
-    box-shadow: var(--shadow-1);
     position: relative;
-    margin: 3.5rem 0;
 }
 
-#why-solar .why-text {
-    margin: 3.5rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+#why-solar .why-box-content{
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    background: url("../images/backgrounds/why-me.svg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
 }
 
-#why-solar .why-text img {
-    max-width: 20%;
+#why-solar .why-box-content img {
+    max-width: 18%;
+    margin: 0.6rem 0;
+}
+
+#why-solar .why-box-content h3{
+    text-transform: capitalize;
+    color: var(--yellow-2);
+    font-weight: 600;
+    margin: 0.55rem 0;
+}
+
+#why-solar .why-box-content p{
+    color: #242424;
     margin: 0.5rem 0;
-}
-
-#why-solar .why-text h3 {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.8rem;
-    margin: 1rem 0;
-    color: #1376e3;
-    font-family: "Montserrat", sans-serif;
-}
-
-#why-solar .why-text p {
-    color: var(--grey-2);
-    font-weight: 500;
-    opacity: 0.8;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
 }
 
 /* ========== Services ========== */
-.servicepage {
-    margin: 6rem 0 4rem;
-}
-
-.services .header h2 {
-    color: #ffffff;
-}
-
-.services .header p {
-    color: #ffffff;
-    font-weight: 600;
+.services {
+    background: var(--yellow-0);
+    position: relative;
 }
 
 .servicepage .card,
 .services .card {
-    padding: 1.6rem;
+    padding: 1.5rem;
     border: none;
     border-radius: 1rem;
-    /* margin: 2rem 0; */
-    box-shadow: var(--shadow);
     transition: 500ms;
-    background: #ffffff;
+    background: transparent;
 }
 
 .servicepage img,
@@ -608,34 +588,11 @@ ol.carousel-indicators li.active {
     line-height: 1.55;
 }
 
-@media screen and (max-width: 900px) {
-    .services {
-        background: url("../images/service-md.jpg") no-repeat,
-            rgba(0, 0, 0, 0.75);
-        background-size: cover;
-        background-position: cover;
-        background-blend-mode: overlay;
-        background-attachment: fixed;
-        position: relative;
-    }
-}
-
 /* @media screen and (min-width: 481px) and (max-width: 900px) {
     html {
         background: url("med_bg.jpg") no-repeat center center fixed;
     }
 } */
-@media screen and (min-width: 901px) {
-    .services {
-        background: url("../images/service-lg.jpg") no-repeat,
-            rgba(0, 0, 0, 0.75);
-        background-size: cover;
-        background-position: cover;
-        background-blend-mode: overlay;
-        background-attachment: fixed;
-        position: relative;
-    }
-}
 
 /* ========== Services Ends ========== */
 
@@ -647,6 +604,8 @@ ol.carousel-indicators li.active {
 .projects .card {
     box-shadow: var(--shadow-1);
     border-radius: 0;
+    border: none;
+    border-radius: 5px;
 }
 
 .projects .card-pix {
@@ -671,8 +630,8 @@ ol.carousel-indicators li.active {
 .projects .card-title {
     font-weight: bold;
     margin: 1rem 0;
-    font-size: 1.7rem;
-    color: #212121;
+    font-size: 1.65rem;
+    color: var(--yellow-2);
 }
 
 .projects .card-text {
@@ -750,7 +709,8 @@ ol.carousel-indicators li.active {
 } */
 #start .startbox {
     box-shadow: var(--shadow-1);
-    background-color: var(--light-0);
+    background-color:#ffffff;
+    border-radius: 5px;
 }
 
 #start .startbox h3 {
@@ -774,7 +734,7 @@ ol.carousel-indicators li.active {
 }
 
 #start .startbox img {
-    max-width: 25%;
+    max-width: 20%;
     margin: 1rem auto;
 }
 
@@ -1079,40 +1039,54 @@ button[type="submit"].deactive {
 
 /* ======Thank ends ====== */
 /* ===== Cta ===== */
-.cta h3 {
-    color: #f5f5f5;
+.cta{
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-text{
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    z-index: 10;
+    background: url("../images/backgrounds/about.svg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width:500px;
+    color: #242424;
+}
+
+.cta p {
+    color: var(--grey-2);
     font-weight: 500;
     font-size: 1.75rem;
     line-height: 1.55;
 }
 
-.cta a {
+.cta a.cta_btn {
     font-size: 1.55rem;
     font-weight: 500;
-    display: block;
     color: var(--yellow-2);
-    padding: 0.75rem 1.65rem;
+    padding: 0.75rem 1rem;
     transition: 500ms;
-}
-
-.cta button {
-    outline: 0;
     border: 2px solid var(--yellow-2);
+    /* outline: 2px solid var(--yellow-2); */
     background: inherit;
-    display: block;
     transition: 500ms;
+    margin: 1rem 0;
+    border-radius: 10px;
     box-shadow: var(--shadow-1);
 }
 
-.cta button:hover {
-    border: 2px solid var(--light-0);
-}
-
 .cta a:hover {
-    color: var(--light-0);
+    border: 2px solid var(--grey-2);
+    color: var(--grey-2);
 }
 
-@media screen and (min-width: 1000px) {
+/* @media screen and (min-width: 1000px) {
     .cta {
         background: url("../images/ctabg-lg.jpg") no-repeat, rgba(0, 0, 0, 0.55);
         background-blend-mode: overlay;
@@ -1134,7 +1108,7 @@ button[type="submit"].deactive {
         align-items: center;
         justify-content: center;
     }
-}
+} */
 
 /* innerheader */
 .innerheader h3 {

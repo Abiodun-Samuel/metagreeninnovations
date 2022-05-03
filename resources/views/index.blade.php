@@ -156,51 +156,60 @@
     {{-- Why Solar --}}
     <section id="why-solar">
         <div class="container">
-            <h2>
-                Why Solar?
-            </h2>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div data-aos="fade-up" class="why-text">
-                        <img loading="lazy" src="{{ url('/images/services/start/solar-panel.svg') }}"
-                            alt="ABUNDANT ENERGY SOURCE">
-                        <h3>FREE & ABUNDANT ENERGY SOURCE</h3>
-                        <p> Solar energy serves as an important source of renewable
-                            energy.</p>
-
-                        <img loading="lazy" src="{{ url('/images/services/start/energetic.svg') }}" alt="constant power">
-                        <h3>
-                            Reliable & Consistent Power Supply
-                        </h3>
-                        <p> Solar provides a consistent and regular means of power supply. </p>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="why-box" data-aos-delay="100" data-aos="fade-up">
-
-                        <img loading="lazy" title="solar Panel" class="img-thumbnail "
+                <div class="col-lg-6 col-md-6">
+                    <div class="why-box" data-aos="fade-right">
+                        <img loading="lazy" title="solar Panel" class="img-fluid"
                             src="{{ url('/images/solar.jpg') }}" alt="importance of solar">
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-
-                    <div data-aos="fade-up" data-aos-delay="200" class="why-text">
-                        <img loading="lazy" src="{{ url('/images/services/start/tool-box.svg') }}"
-                            alt="maintainance free">
-                        <h3>MAINTENANCE FREE</h3>
-                        <p>By going in for solar power, you will cut your cost of
-                            electricity at home or office</p>
-                        <img loading="lazy" src="{{ url('/images/services/start/earth-globe.svg') }}" alt="eco friendly">
-                        <h3>
-                            ECO FRIENDLY
-                        </h3>
-                        <p>Solar is environment friendly, as a result CO2 emissions are
-                            reduced, which contributes less to global warming</p>
-
+                <div class="col-lg-6 col-md-6">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6 d-flex align-items-stretch my-3" data-aos="fade-left"
+                            data-aos-delay="100">
+                            <div class="why-box-content">
+                                <img loading="lazy" src="{{ url('/images/services/start/solar-panel.svg') }}"
+                                    alt="ABUNDANT ENERGY SOURCE">
+                                <h3>Free & aboudant energy source</h3>
+                                <p> Solar energy serves as an important source of renewable
+                                    energy.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 d-flex align-items-stretch my-3" data-aos="fade-left"
+                            data-aos-delay="200">
+                            <div class="why-box-content">
+                                <img loading="lazy" src="{{ url('/images/services/start/energetic.svg') }}"
+                                    alt="constant power">
+                                <h3>
+                                    Reliable & Consistent Power Supply
+                                </h3>
+                                <p> Solar provides a consistent and regular means of power supply. </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 d-flex align-items-stretch my-3" data-aos="fade-left"
+                            data-aos-delay="300">
+                            <div class="why-box-content">
+                                <img loading="lazy" src="{{ url('/images/services/start/tool-box.svg') }}"
+                                    alt="maintainance free">
+                                <h3>maintanence free</h3>
+                                <p>By going in for solar power, you will cut your cost of
+                                    electricity at home or office</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 d-flex align-items-stretch my-3" data-aos="fade-left"
+                            data-aos-delay="400">
+                            <div class="why-box-content">
+                                <img loading="lazy" src="{{ url('/images/services/start/earth-globe.svg') }}"
+                                    alt="eco friendly">
+                                <h3>
+                                    eco friendly
+                                </h3>
+                                <p>Solar is environment friendly, as a result CO2 emissions are
+                                    reduced, which contributes less to global warming</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -216,9 +225,9 @@
             </div>
 
             <div class="row">
-                @foreach ($services as $service)
+                @foreach ($services as $key => $service)
                     <div class="col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch my-4" data-aos="fade-up"
-                        data-aos-delay="{{ $service->aos }}">
+                        data-aos-delay="{{ $key * 150 }}">
                         <div class="card text-center">
                             <figure>
                                 <img loading="lazy" src="{{ url('/images/services/icon/' . $service->id . '.svg') }}"
@@ -247,8 +256,9 @@
             </div>
 
             <div class="row">
-                @foreach ($projects as $project)
-                    <div class="col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch my-4" data-aos="fade-up">
+                @foreach ($projects as $key => $project)
+                    <div class="col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch my-4" data-aos="fade-up"
+                        data-aos-delay="{{ $key * 100 }}">
                         <div class="card">
                             <div class="card-pix">
                                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
@@ -289,16 +299,19 @@
     </section>
     <!-- ===== Projects Ends ===== -->
 
-    <div class="cta py-5">
+    <div class="cta">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-9 col-md-8 col-sm-6 my-3">
-                    <h3> If you'd like to know more about our services or you have any inquiries, click the button to
-                        contact us. We'd love to hear from you! </h3>
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-10">
+                    <img src={{ asset('/images/contact.jpg') }} alt="contact us" class="img-fluid" loading="lazy">
+                    <div class="shadow cta-text p-5 rounded">
+                        <p class="mb-5"> If you'd like to know more about our services or you have any inquiries,
+                            click the button to
+                            contact us. We'd love to hear from you! </p>
+                        <a class="cta_btn" href="{{ route('contact') }}"> Contact Us</a>
+                    </div>
                 </div>
-                <div class=" col-lg-3 col-md-4 col-sm-6 my-3">
-                    <button><a class="" href="{{ route('contact') }}"> Contact Us</a></button>
-                </div>
+
             </div>
         </div>
     </div>
