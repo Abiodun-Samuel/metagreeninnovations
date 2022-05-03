@@ -94,12 +94,11 @@
     <section class="about">
         <div class="container">
             <div class="row">
-
-                <div class="col-lg-4 my-3 ">
-                    <div class="content">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch my-3" data-aos="fade-up">
+                    <div class="content shadow-lg">
 
                         <h2>Why Choose Us</h2>
-                        <p>
+                        {{-- <p>
                             <i>
                                 <svg width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
                                     <path
@@ -110,8 +109,7 @@
                             solar
                             solutions
                             and products to customers in all sectors.
-                        </p>
-
+                        </p> --}}
                         <p>
                             <i>
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -129,23 +127,19 @@
                     </div>
                 </div>
 
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch my-3" data-aos="fade-up">
-                    <div class="icon-box ">
-                        <div class="icon my-1"><img loading="lazy" src="{{ url('/images/mission.svg') }}"
-                                alt="Our mission">
-                        </div>
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch my-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box shadow-lg">
                         <h4>Our Mission</h4>
                         <p>Giving people access to sustainable and affordable power solutions
                         </p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch my-3" data-aos="fade-up" data-aos-delay="50">
-                    <div class="icon-box ">
-                        <div class="icon my-1"><img loading="lazy" src="{{ url('/images/vision.svg') }}"
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch my-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box shadow-lg">
+                        {{-- <div class="icon my-1"><img loading="lazy" src="{{ url('/images/vision.svg') }}"
                                 alt="Our vision">
-                        </div>
+                        </div> --}}
                         <h4>Our Vision</h4>
                         <p>We are fully committed to providing every Nigerian a ready access to innovative,
                             competitive, environmentally friendly and reliable power and renewable energy
