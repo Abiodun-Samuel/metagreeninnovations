@@ -387,12 +387,14 @@ ol.carousel-indicators li.active {
 .about .content:hover {
     fill: var(--yellow-2);
     color: var(--yellow-2);
-    background: #ffffff;
+    background: url("../images/backgrounds/about.svg") no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .about .icon-box {
     text-align: center;
-    background: url("../images/backgrounds/bg1.svg") no-repeat;
+    background: url("../images/backgrounds/about.svg") no-repeat;
     background-size: cover;
     background-position: center;
     padding: 2rem;
