@@ -208,8 +208,8 @@
 
     @stack('scripts')
 
-    <script src="{{ url('script.js?ver=1.0') }}"></script>
-    {{-- <script src="{{ url('/js/script.js?ver=1.0') }}"></script> --}}
+    {{-- <script src="{{ url('script.js?ver=1.0') }}"></script> --}}
+    <script src="{{ url('/js/script.js?ver=1.1') }}"></script>
 
 </body>
 

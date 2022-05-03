@@ -1,83 +1,90 @@
-/******/ (() => { // webpackBootstrap
-var __webpack_exports__ = {};
-/*!**************************!*\
+/******/ (() => {
+    // webpackBootstrap
+    var __webpack_exports__ = {};
+    /*!**************************!*\
   !*** ./public/script.js ***!
   \**************************/
-(function ($) {
-  "use strict"; // Animate on scroll Init
+    (function ($) {
+        "use strict"; // Animate on scroll Init
 
-  function aos_init() {
-    AOS.init({
-      once: false,
-      mirror: true
-    });
-  }
-
-  $(window).on("load", function () {
-    aos_init();
-  });
-  $(document).ready(function () {
-    var previousScroll = 0;
-    $(window).scroll(function () {
-      var currentScroll = $(this).scrollTop();
-
-      if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()) {
-        if (currentScroll > previousScroll) {
-          window.setTimeout(hideNav, 300);
-        } else {
-          window.setTimeout(showNav, 300);
+        function aos_init() {
+            AOS.init({
+                once: false,
+                mirror: true,
+            });
         }
 
-        previousScroll = currentScroll;
-      }
-    });
+        $(window).on("load", function () {
+            aos_init();
+        });
+        $(document).ready(function () {
+            var previousScroll = 0;
+            $(window).scroll(function () {
+                var currentScroll = $(this).scrollTop();
 
-    function hideNav() {
-      $(".navbar").removeClass("is-visible").addClass("is-hidden");
-    }
+                if (
+                    currentScroll > 0 &&
+                    currentScroll < $(document).height() - $(window).height()
+                ) {
+                    if (currentScroll > previousScroll) {
+                        window.setTimeout(hideNav, 300);
+                    } else {
+                        window.setTimeout(showNav, 300);
+                    }
 
-    function showNav() {
-      $(".navbar").removeClass("is-hidden").addClass("is-visible");
-    }
-  }); // venobox
+                    previousScroll = currentScroll;
+                }
+            });
 
-  var veno = document.querySelector(".venobox");
+            function hideNav() {
+                $(".navbar").removeClass("is-visible").addClass("is-hidden");
+            }
 
-  if (veno) {
-    $(".venobox").venobox({
-      numeratio: true,
-      autoplay: true,
-      arrowsColor: "#d58943",
-      numerationPosition: "bottom",
-      spinner: "cube-grid",
-      spinColor: "#d58943",
-      closeColor: "#d58943"
-    });
-  } // Hero Carousel
+            function showNav() {
+                $(".navbar").removeClass("is-hidden").addClass("is-visible");
+            }
+        }); // venobox
 
+        var veno = document.querySelector(".venobox");
 
-  $(".carousel").carousel({
-    interval: 1500,
-    pause: false,
-    wrap: true,
-    keyboard: false
-  }); // Back to top button
+        if (veno) {
+            $(".venobox").venobox({
+                numeratio: true,
+                autoplay: true,
+                arrowsColor: "#d58943",
+                numerationPosition: "bottom",
+                spinner: "cube-grid",
+                spinColor: "#d58943",
+                closeColor: "#d58943",
+            });
+        } // Hero Carousel
 
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $(".back-to-top").fadeIn("slow");
-    } else {
-      $(".back-to-top").fadeOut("slow");
-    }
-  });
-  $(".back-to-top").click(function () {
-    $("html, body").animate({
-      scrollTop: 0
-    }, 500, "linear");
-    return false;
-  }); // Footer Year
+        $(".carousel").carousel({
+            interval: 2000,
+            pause: false,
+            wrap: true,
+            keyboard: false,
+        }); // Back to top button
 
-  document.getElementById("year").innerHTML = new Date().getFullYear();
-})(jQuery);
-/******/ })()
-;
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $(".back-to-top").fadeIn("slow");
+            } else {
+                $(".back-to-top").fadeOut("slow");
+            }
+        });
+        $(".back-to-top").click(function () {
+            $("html, body").animate(
+                {
+                    scrollTop: 0,
+                },
+                500,
+                "linear"
+            );
+            return false;
+        }); // Footer Year
+
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    })(jQuery);
+    /******/
+})();

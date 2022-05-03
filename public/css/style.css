@@ -37,7 +37,7 @@ h6 {
     margin: 0;
     padding: 0;
     font-family: "Merriweather", serif;
-    letter-spacing: 0.9px;
+    letter-spacing: 0.5px;
 }
 
 p,
@@ -57,7 +57,7 @@ html,
 body {
     font-size: 10px;
     scroll-behavior: smooth;
-    background-color: var(--light-0);
+    background-color: #ffffff;
     overflow-x: hidden;
 }
 
@@ -251,14 +251,14 @@ header .navbar .nav-link:hover:before {
 
 #hero h1 {
     font-weight: 900;
-    font-size: 3rem;
-    line-height: 1.6;
-    display: inline-block;
+    font-size: 3.6rem;
     position: relative;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: var(--light-1);
+    line-height: 1.5;
+    text-shadow: var(--shadow);
 }
 
 #hero span {
@@ -268,7 +268,7 @@ header .navbar .nav-link:hover:before {
 #hero .hero-text {
     font-weight: 500;
     line-height: 1.6;
-    font-size: 1.75rem;
+    font-size: 1.755rem;
     opacity: 0.7;
     color: var(--light-0);
     margin: 1.5rem 0;
@@ -282,6 +282,7 @@ header .navbar .nav-link:hover:before {
     border: 2px solid var(--yellow-2);
     color: var(--light-0);
     background-color: var(--yellow-2);
+    border-radius: 2rem;
 }
 
 #hero .mybtn:first-child:hover {
@@ -290,22 +291,31 @@ header .navbar .nav-link:hover:before {
 }
 
 #hero .mybtn:last-child {
+    border-radius: 2rem;
     border: 2px solid var(--yellow-2);
     color: var(--yellow-2);
 }
 
 #hero .mybtn:last-child:hover {
-    border: 2px solid var(--grey-2);
-    color: var(--grey-2);
+    border: 2px solid var(--light-0);
+    color: var(--light-0);
 }
 
 .carousel-item{
     min-height: 500px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.65)), url('../images/hero/hero1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     padding: 13rem 0 8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+.carousel-one{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.65)),url('../images/hero/hero1.jpg');
+}
+.carousel-two{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.65)),url('../images/hero/hero2.jpg');
+}
+.carousel-three{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.65)),url('../images/hero/hero3.jpg');
 }
 
 ol.carousel-indicators li,
@@ -320,16 +330,9 @@ ol.carousel-indicators li.active {
 }
 
 @media screen and (max-width: 480px) {
-    #hero {
-        padding: 9rem 0 2rem;
-    }
 
     #hero h1 {
         font-size: 2.7rem;
-    }
-
-    #hero .hero-img-box {
-        margin: 4rem auto;
     }
 
     #hero .hero-text {
@@ -344,16 +347,9 @@ ol.carousel-indicators li.active {
 }
 
 @media screen and (min-width: 481px) and (max-width: 900px) {
-    #hero {
-        padding: 10rem 0 4rem;
-    }
 
     #hero h1 {
         font-size: 3rem;
-    }
-
-    #hero .hero-img-box {
-        margin: 5rem auto;
     }
 
     #hero .hero-text {

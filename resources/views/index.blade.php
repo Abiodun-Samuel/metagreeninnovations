@@ -8,53 +8,85 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                {{-- <li data-target="#carouselExampleIndicators" data-slide-to="3"></li> --}}
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item carousel-one active">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-lg-6 col-md-8 text-center">
-                            <h1>
-                                <span>Safe</span> Energy Solutions for <br>
-                                <span id="typed"></span>
-                            </h1>
-                            <p class="hero-text">
-                                We provide quality solar energy systems at affordable price. We take care
-                                of the design, supply and installation. Do you wish to cut down the cost of your electricity
-                                bills?
-                            </p>
-                            <div class="hero-btn">
-                                <a href="{{ url('#start') }}" class="mybtn">Get Started</a>
-                                <a href="{{ route('contact') }}" class="mybtn mx-5"> Contact</a>
+                <div class="carousel-item active carousel-one">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <h1>
+                                    <span>Safe</span> <br> Energy Solutions
+                                    {{-- <span>Safe</span>, <span>Steady</span> & <span>Sustainable</span> <br> Energy Solutions --}}
+                                    for
+                                    <br>
+                                    <span id="typed_one"></span>
+                                </h1>
+                                <p class="hero-text">
+                                    We provide quality solar energy systems at affordable price. We take care
+                                    of the design, supply and installation. Do you wish to cut down the cost of your
+                                    electricity
+                                    bills?
+                                </p>
+                                <div class="hero-btn">
+                                    <a href="{{ url('#start') }}" class="mybtn">Get Started</a>
+                                    <a href="{{ route('contact') }}" class="mybtn mx-5"> Contact</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    {{-- <span>Steady</span> & <span>Sustainable</span> --}}
-                    {{-- <img loading="lazy" src="{{ url('/images/hero/hero1.jpg') }}" class="img-fluid bg-secondary"
-                        alt="our project" title="Our Projects"> --}}
+                </div>
+                <div class="carousel-item carousel-two">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <h1>
+                                    <span>Steady</span> <br> Energy Solutions
+                                    {{-- <span>Safe</span>, <span>Steady</span> & <span>Sustainable</span> <br> Energy Solutions --}}
+                                    for
+                                    <br>
+                                    <span id="typed_two"></span>
+                                </h1>
+                                <p class="hero-text">
+                                    We provide quality solar energy systems at affordable price. We take care
+                                    of the design, supply and installation. Do you wish to cut down the cost of your
+                                    electricity
+                                    bills?
+                                </p>
+                                <div class="hero-btn">
+                                    <a href="{{ url('#start') }}" class="mybtn">Get Started</a>
+                                    <a href="{{ route('contact') }}" class="mybtn mx-5"> Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-three">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <h1>
+                                    <span>Sustainable</span> <br> Energy Solutions
+                                    {{-- <span>Safe</span>, <span>Steady</span> & <span>Sustainable</span> <br> Energy Solutions --}}
+                                    for
+                                    <br>
+                                    <span id="typed_three"></span>
+                                </h1>
+                                <p class="hero-text">
+                                    We provide quality solar energy systems at affordable price. We take care
+                                    of the design, supply and installation. Do you wish to cut down the cost of your
+                                    electricity
+                                    bills?
+                                </p>
+                                <div class="hero-btn">
+                                    <a href="{{ url('#start') }}" class="mybtn">Get Started</a>
+                                    <a href="{{ route('contact') }}" class="mybtn mx-5"> Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        {{-- <div class="container">
-            <div class="row">
-                <div class="col-lg-6 hero-text-box">
-                    <h1 class="hero-header">
-                        <span>Safe</span>, <span>Steady</span> & <span>Sustainable</span> Energy Solutions for <br>
-                        <span id="typed"></span>
-                    </h1>
-                    <p class="hero-text anim">
-                        We provide quality solar energy systems at affordable price. We take care
-                        of the design, supply and installation. Do you wish to cut down the cost of your electricity bills?
-                    </p>
-                    <div class="hero-btn anim">
-                        <a href="{{ url('#start') }}" class="mybtn">Get Started</a>
-                        <a href="{{ route('contact') }}" class="mybtn mx-5"> Contact</a>
-                    </div>
-                </div>
-                <div class="col-lg-12 hero-img-box">
-                </div>
-            </div>
-        </div> --}}
     </div>
     {{-- ===== Hero Ends ===== --}}
 
@@ -92,7 +124,7 @@
                             commitment to excellence.
                         </p>
                         <div>
-                            <a href="{{ url('/About Us') }}" class="mybtn yellow-1"> Read More </a>
+                            <a href="{{ route('about') }}" class="mybtn yellow-1"> Read More </a>
                         </div>
                     </div>
                 </div>
@@ -391,8 +423,8 @@
                         <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/wandel.jpg') }}"
                             alt="Our Partners">
                         <a href="{{ url('https://www.maldynsolution.com') }}">
-                            <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/maldyn.jpg') }}"
-                                alt="Our Partners">
+                            <img loading="lazy" class="img-fluid figure m-3"
+                                src="{{ url('images/clients/maldyn.jpg') }}" alt="Our Partners">
                         </a>
                         <img loading="lazy" class="img-fluid figure m-3" src="{{ url('images/clients/genus.jpg') }}"
                             alt="Our Partners">
@@ -419,9 +451,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script>
         // Typejs
-        var typejs = document.getElementById('typed')
-        if (typejs) {
-            var typed = new Typed("#typed", {
+        var typejs_one = document.getElementById('typed_one')
+        var typejs_two = document.getElementById('typed_two')
+        var typejs_three = document.getElementById('typed_three')
+        if (typejs_one || typejs_two || typejs_three) {
+            var typed_one = new Typed("#typed_one", {
+                strings: [
+                    "Homes.",
+                    "Hospitals.",
+                    "Offices.",
+                    "SMEs.",
+                    "Churches.",
+                    "And More.",
+                ],
+                smartBackspace: true,
+                typeSpeed: 60,
+                backSpeed: 30,
+                loop: true,
+                loopCount: Infinity,
+            });
+            var typed_two = new Typed("#typed_two", {
+                strings: [
+                    "Homes.",
+                    "Hospitals.",
+                    "Offices.",
+                    "SMEs.",
+                    "Churches.",
+                    "And More.",
+                ],
+                smartBackspace: true,
+                typeSpeed: 60,
+                backSpeed: 30,
+                loop: true,
+                loopCount: Infinity,
+            });
+            var typed_three = new Typed("#typed_three", {
                 strings: [
                     "Homes.",
                     "Hospitals.",
